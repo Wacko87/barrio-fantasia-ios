@@ -8,17 +8,78 @@ public struct SettingsView: View {
     @Query private var matches: [Match]
     @Query private var managers: [FantasyManager]
 
+    @State private var appleAuth = AppleAuthService.shared
     @State private var serverUrlString: String = APIService.shared.serverURL.absoluteString
     @State private var isCheckingHealth: Bool = false
     @State private var healthStatusMessage: String?
     @State private var isHealthy: Bool?
     @State private var biometricAuth = BiometricAuthService.shared
+    @State private var showingInviteSheet: Bool = false
+    @State private var showAdvancedServerSettings: Bool = false
 
     public init() {}
 
     public var body: some View {
         NavigationStack {
             Form {
+                // Section 1: User Profile & Apple ID
+                Section("Cuenta de Jugador") {
+                    HStack(spacing: 12) {
+                        Image(systemName: "person.crop.circle.fill")
+                            .font(.system(size: 38))
+                            .foregroundStyle(Color(red: 0.89, green: 0.11, blue: 0.15))
+
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(appleAuth.userDisplayName)
+                                .font(.headline)
+                                .fontWeight(.bold)
+                            if let email = appleAuth.userEmail {
+                                Text(email)
+                                    .font(.caption2)
+                                    .foregroundStyle(.secondary)
+                            } else {
+                                Text("Perfil Local de Pandilla")
+                                    .font(.caption2)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                    .padding(.vertical, 4)
+
+                    if appleAuth.isAuthenticated {
+                        Button(role: .destructive) {
+                            appleAuth.signOut()
+                        } label: {
+                            Text("Cerrar Sesión de Apple")
+                        }
+                    }
+                }
+
+                // Section 2: League Sharing & Onboarding
+                Section("Gestión de la Pandilla") {
+                    Button {
+                        showingInviteSheet = true
+                        HapticManager.shared.impact(.light)
+                    } label: {
+                        HStack {
+                            Image(systemName: "qrcode")
+                                .foregroundStyle(Color(red: 0.89, green: 0.11, blue: 0.15))
+                            Text("Invitar Compañeros (Código y QR)")
+                                .fontWeight(.semibold)
+                        }
+                    }
+
+                    HStack {
+                        Text("Código de Pandilla")
+                        Spacer()
+                        Text(InviteCodeService.shared.currentLeagueCode)
+                            .font(.system(.subheadline, design: .monospaced))
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color(red: 0.89, green: 0.11, blue: 0.15))
+                    }
+                }
+
+                // Section 3: Security & Biometrics
                 Section("Seguridad & Acceso") {
                     Toggle("Bloquear con \(biometricAuth.biometricTypeString)", isOn: Binding(
                         get: { biometricAuth.isBiometricEnabled },
@@ -26,6 +87,7 @@ public struct SettingsView: View {
                     ))
                 }
 
+                // Section 4: Backup
                 Section("Copia de Seguridad de la Liga") {
                     let json = VaultBackupService.shared.exportBackupJSON(players: players, matches: matches, managers: managers)
                     let doc = LeagueBackupDocument(jsonString: json)
@@ -39,36 +101,7 @@ public struct SettingsView: View {
                         .foregroundStyle(.secondary)
                 }
 
-                Section("Servidor & Sincronización") {
-                    TextField("Dirección del Servidor", text: $serverUrlString)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                        .keyboardType(.URL)
-
-                    Button {
-                        checkServer()
-                    } label: {
-                        HStack {
-                            if isCheckingHealth {
-                                ProgressView()
-                                    .padding(.trailing, 6)
-                            }
-                            Text("Comprobar Estado de Conexión")
-                        }
-                    }
-                    .disabled(isCheckingHealth)
-
-                    if let msg = healthStatusMessage, let healthy = isHealthy {
-                        HStack {
-                            Image(systemName: healthy ? "checkmark.circle.fill" : "exclamationmark.triangle.fill")
-                                .foregroundStyle(healthy ? .green : .orange)
-                            Text(msg)
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                }
-
+                // Section 5: Notifications
                 Section("Notificaciones de Votación") {
                     Button {
                         Task {
@@ -85,6 +118,44 @@ public struct SettingsView: View {
                         .foregroundStyle(.secondary)
                 }
 
+                // Section 6: Advanced Server Settings (Collapsible, for developers only)
+                Section {
+                    DisclosureGroup("Ajustes Avanzados de Servidor", isExpanded: $showAdvancedServerSettings) {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Solo necesario si utilizas un servidor propio self-hosted.")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+
+                            TextField("URL del Servidor", text: $serverUrlString)
+                                .autocorrectionDisabled()
+                                .textInputAutocapitalization(.never)
+                                .keyboardType(.URL)
+
+                            Button {
+                                checkServer()
+                            } label: {
+                                HStack {
+                                    if isCheckingHealth {
+                                        ProgressView().padding(.trailing, 6)
+                                    }
+                                    Text("Comprobar Conexión")
+                                }
+                            }
+                            .disabled(isCheckingHealth)
+
+                            if let msg = healthStatusMessage, let healthy = isHealthy {
+                                HStack {
+                                    Image(systemName: healthy ? "checkmark.circle.fill" : "exclamationmark.triangle.fill")
+                                        .foregroundStyle(healthy ? .green : .orange)
+                                    Text(msg).font(.caption).foregroundStyle(.secondary)
+                                }
+                            }
+                        }
+                        .padding(.top, 4)
+                    }
+                }
+
+                // Section 7: About
                 Section("Acerca de") {
                     HStack {
                         Text("Versión")
@@ -92,18 +163,10 @@ public struct SettingsView: View {
                         Text("1.0.0 (Build 1)")
                             .foregroundStyle(.secondary)
                     }
-
                     HStack {
-                        Text("Plataforma")
+                        Text("Modo de Operación")
                         Spacer()
-                        Text("iOS 17.0+ · Swift 6")
-                            .foregroundStyle(.secondary)
-                    }
-
-                    HStack {
-                        Text("Modo Operativo")
-                        Spacer()
-                        Text("Offline-First + API Sync")
+                        Text("Autónomo Offline-First")
                             .foregroundStyle(.secondary)
                     }
                 }
@@ -118,6 +181,9 @@ public struct SettingsView: View {
                         dismiss()
                     }
                 }
+            }
+            .sheet(isPresented: $showingInviteSheet) {
+                LeagueInviteSheet()
             }
         }
     }

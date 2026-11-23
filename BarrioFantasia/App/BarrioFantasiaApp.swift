@@ -6,6 +6,8 @@ import TipKit
 struct BarrioFantasiaApp: App {
     let container: ModelContainer
     @State private var biometricAuth = BiometricAuthService.shared
+    @AppStorage("has_completed_onboarding") private var hasCompletedOnboarding: Bool = false
+    @State private var showingOnboarding: Bool = false
 
     init() {
         try? Tips.configure([
@@ -36,8 +38,19 @@ struct BarrioFantasiaApp: App {
                         DemoDataLoader.loadSampleDataIfNeeded(context: container.mainContext)
                     }
 
+                if !hasCompletedOnboarding {
+                    OnboardingFlowView(isPresented: $showingOnboarding)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                }
+
                 if biometricAuth.isBiometricEnabled && !biometricAuth.isUnlocked {
                     BiometricLockOverlay(biometricAuth: biometricAuth)
+                }
+            }
+            .onOpenURL { url in
+                if let components = URLComponents(url: url, resolvingAgainstBaseURL: true),
+                   let code = components.queryItems?.first(where: { $0.name == "code" })?.value {
+                    _ = InviteCodeService.shared.validateAndJoin(code: code)
                 }
             }
         }
