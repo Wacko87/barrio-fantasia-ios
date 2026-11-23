@@ -31,6 +31,7 @@
 		C6C6993CD5D580CE5CA030C0 /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480E7D1FBBD54B1D4AB6C80 /* MatchesViewModel.swift */; };
 		CD4E3DC0872C2119333EB261 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA91E86C72E55C7B71BF4F /* MainTabView.swift */; };
 		D5985482306AAB32C1A5431E /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44AD39565A214E53C678980 /* Achievement.swift */; };
+		D8739F5F335F0C1C0BEE7223 /* VotingDeadlineTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9194B1BA63B814C608D78D /* VotingDeadlineTip.swift */; };
 		ED053B1885A94072294E8D39 /* BarrioFantasiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DBE0450C35EF23436553C /* BarrioFantasiaApp.swift */; };
 		EF8A6F668BC7BB53DEC10B89 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E057C78D8BA21335930709A /* HapticManager.swift */; };
 		F8A6741862A8579F5D0B1457 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA89AB96A60B7CA5750DA718 /* Match.swift */; };
@@ -65,6 +66,7 @@
 		CA89AB96A60B7CA5750DA718 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		D86255CCE5DD9216DD269C7F /* StandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsView.swift; sourceTree = "<group>"; };
 		DB6D4BB202E16C65BDEA5EA3 /* VotingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingViewModel.swift; sourceTree = "<group>"; };
+		ED9194B1BA63B814C608D78D /* VotingDeadlineTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingDeadlineTip.swift; sourceTree = "<group>"; };
 		FA7DFA46B7F8A659BB52C1E8 /* FantasyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyViewModel.swift; sourceTree = "<group>"; };
 		FF7DBE0450C35EF23436553C /* BarrioFantasiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrioFantasiaApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 				2263085F55CBB2B7B8CD2DDF /* APIService.swift */,
 				02882BFE94A0856E069E379E /* DemoDataLoader.swift */,
 				2E057C78D8BA21335930709A /* HapticManager.swift */,
+				ED9194B1BA63B814C608D78D /* VotingDeadlineTip.swift */,
 				74379A608EEEC3B802A6F543 /* VotingReminderService.swift */,
 			);
 			path = Services;
@@ -261,6 +264,7 @@
 				B9E7423E50F434A6F5986C65 /* StandingsView.swift in Sources */,
 				376EF7D07C73D865BA6B951A /* StandingsViewModel.swift in Sources */,
 				8FE68F6169BC729B6AA46230 /* Vote.swift in Sources */,
+				D8739F5F335F0C1C0BEE7223 /* VotingDeadlineTip.swift in Sources */,
 				3B732E47E37A5D98F2CC059D /* VotingReminderService.swift in Sources */,
 				4970FC956D38E60FE52D7F44 /* VotingViewModel.swift in Sources */,
 			);

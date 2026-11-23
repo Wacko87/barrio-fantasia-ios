@@ -1,11 +1,17 @@
 import SwiftUI
 import SwiftData
+import TipKit
 
 @main
 struct BarrioFantasiaApp: App {
     let container: ModelContainer
 
     init() {
+        try? Tips.configure([
+            .displayFrequency(.immediate),
+            .datastoreLocation(.applicationDefault)
+        ])
+
         do {
             let schema = Schema([
                 Player.self,

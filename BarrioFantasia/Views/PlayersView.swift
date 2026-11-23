@@ -39,13 +39,16 @@ public struct PlayersView: View {
                     let list = viewModel.filteredPlayers(from: players)
                     LazyVStack(spacing: 12) {
                         ForEach(list) { player in
-                            NavigationLink(destination: PlayerDetailView(player: player)) {
+                            NavigationLink(value: player) {
                                 PlayerRowCard(player: player)
                             }
                             .buttonStyle(.plain)
                         }
                     }
                     .padding(.horizontal)
+                    .navigationDestination(for: Player.self) { player in
+                        PlayerDetailView(player: player)
+                    }
                 }
                 .padding(.vertical, 8)
             }

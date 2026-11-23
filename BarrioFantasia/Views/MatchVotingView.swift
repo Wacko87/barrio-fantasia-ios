@@ -106,6 +106,7 @@ public struct MatchVotingView: View {
                     .clipShape(Capsule())
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel(draft.wrappedValue.isMvp ? "Jugador marcado como MVP del partido" : "Marcar a \(draft.wrappedValue.player.displayName) como MVP")
             }
 
             // Slider with score value
@@ -128,6 +129,7 @@ public struct MatchVotingView: View {
                     Text("Puntuación")
                 }
                 .tint(scoreColor(draft.wrappedValue.score))
+                .accessibilityValue("\(String(format: "%.1f", draft.wrappedValue.score)) puntos")
             }
 
             // Optional remark

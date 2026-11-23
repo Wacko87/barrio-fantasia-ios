@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import TipKit
 
 public struct MatchesView: View {
     @Query private var matches: [Match]
@@ -7,6 +8,7 @@ public struct MatchesView: View {
     @State private var viewModel = MatchesViewModel()
     @State private var showingSettings: Bool = false
     @State private var votingMatch: Match? = nil
+    private let votingTip = VotingDeadlineTip()
 
     public init() {}
 
@@ -16,6 +18,10 @@ public struct MatchesView: View {
                 VStack(spacing: 16) {
                     // Header Brand Card
                     headerBrandSection
+
+                    // Contextual TipKit Tip
+                    TipView(votingTip)
+                        .padding(.horizontal)
 
                     // Segmented Filter
                     Picker("Filtro", selection: $viewModel.selectedFilter) {
@@ -33,7 +39,7 @@ public struct MatchesView: View {
                     } else {
                         LazyVStack(spacing: 14) {
                             ForEach(filtered) { match in
-                                NavigationLink(destination: MatchDetailView(match: match)) {
+                                NavigationLink(value: match) {
                                     MatchCardView(match: match, onVoteTap: {
                                         votingMatch = match
                                     }, onSignupTap: {
@@ -44,6 +50,9 @@ public struct MatchesView: View {
                             }
                         }
                         .padding(.horizontal)
+                        .navigationDestination(for: Match.self) { match in
+                            MatchDetailView(match: match)
+                        }
                     }
                 }
                 .padding(.bottom, 24)
@@ -60,6 +69,7 @@ public struct MatchesView: View {
                         Image(systemName: "gearshape.fill")
                             .foregroundStyle(Color(red: 0.89, green: 0.11, blue: 0.15))
                     }
+                    .accessibilityLabel("Ajustes del servidor y notificaciones")
                 }
             }
             .sheet(isPresented: $showingSettings) {

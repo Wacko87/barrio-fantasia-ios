@@ -115,7 +115,7 @@ public struct PlayerDetailView: View {
                     Text("Valor de Mercado")
                         .font(.caption)
                         .foregroundStyle(.secondary)
-                    Text("\(player.marketValue / 1_000_000).000.000 €")
+                    Text(player.marketValue, format: .currency(code: "EUR").precision(.fractionLength(0)))
                         .font(.title3)
                         .fontWeight(.black)
                         .foregroundStyle(Color(red: 0.89, green: 0.11, blue: 0.15))
