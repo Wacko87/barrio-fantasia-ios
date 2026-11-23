@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Barrio de Fantasía permite seleccionar una imagen de tu galería para personalizar tu foto de perfil y avatar de jugador.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Barrio de Fantasía utiliza Face ID para proteger tus votaciones privadas, alineaciones y notas del partido.</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>UILaunchScreen</key>

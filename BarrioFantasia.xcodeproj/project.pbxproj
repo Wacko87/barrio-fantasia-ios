@@ -8,15 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		06368ACBB24DFC7CB4C4B4AE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263085F55CBB2B7B8CD2DDF /* APIService.swift */; };
+		149BF6FF7DBB2A48D90F188A /* RatingHistoryChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890181CB77D23D854565B449 /* RatingHistoryChart.swift */; };
 		1AFD009B7A4477998EF678B5 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCBF7E8999901D6C5872FD9 /* MatchDetailView.swift */; };
 		223C40840F15B6C684C53B56 /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472325D14326C96CCB423843 /* MatchesView.swift */; };
 		2746B09116EC60630B4FD650 /* StandingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5A2365407D7C540E38599D /* StandingsRow.swift */; };
 		376EF7D07C73D865BA6B951A /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACCB89353428589EA6F70F /* StandingsViewModel.swift */; };
 		3B732E47E37A5D98F2CC059D /* VotingReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74379A608EEEC3B802A6F543 /* VotingReminderService.swift */; };
+		3E7E88043EB1CD113F2FA9BF /* VaultBackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF74198B61E6767097E4BC /* VaultBackupService.swift */; };
+		3F35DC0B8A86CB2DBBD2D2E9 /* BiometricLockOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B56135A69F4C91674E1C73 /* BiometricLockOverlay.swift */; };
 		4970FC956D38E60FE52D7F44 /* VotingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6D4BB202E16C65BDEA5EA3 /* VotingViewModel.swift */; };
 		4FC1606AD657DBD80A640913 /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58E9F47F92E64DEDC0D9EF /* PlayersViewModel.swift */; };
 		54AD4886417D2F873EA1E7E2 /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24573546275C1D8437414BD /* PlayersView.swift */; };
+		56BA484EC7E4C2ED60AF89A1 /* MatchReportPDFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A961A157496DB429A7D5B /* MatchReportPDFService.swift */; };
 		6FBE9AB9660483EC5D9E6932 /* DemoDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02882BFE94A0856E069E379E /* DemoDataLoader.swift */; };
+		712ED974ECF1DA7DA266705B /* SoccerPitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C45BD5D56AC9CD920FDA10E /* SoccerPitchView.swift */; };
 		79F2352CE478CA7DE27AB834 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544932CAF7C96A5C3C75E2A8 /* SettingsView.swift */; };
 		8FE68F6169BC729B6AA46230 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B9D667445EE614CFC86D9F /* Vote.swift */; };
 		92FE798EF224E6D104320554 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8EDE3C2C4F543D3C0CAB7 /* AchievementsView.swift */; };
@@ -29,6 +34,7 @@
 		B9E7423E50F434A6F5986C65 /* StandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86255CCE5DD9216DD269C7F /* StandingsView.swift */; };
 		BA1044BA6BB5924F0236196C /* FantasyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7DFA46B7F8A659BB52C1E8 /* FantasyViewModel.swift */; };
 		C6C6993CD5D580CE5CA030C0 /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480E7D1FBBD54B1D4AB6C80 /* MatchesViewModel.swift */; };
+		C9E0BD105C6FC9DD58D0031F /* BiometricAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E54A78DED5AB6FC44A78C4 /* BiometricAuthService.swift */; };
 		CD4E3DC0872C2119333EB261 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA91E86C72E55C7B71BF4F /* MainTabView.swift */; };
 		D5985482306AAB32C1A5431E /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44AD39565A214E53C678980 /* Achievement.swift */; };
 		D8739F5F335F0C1C0BEE7223 /* VotingDeadlineTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9194B1BA63B814C608D78D /* VotingDeadlineTip.swift */; };
@@ -41,22 +47,28 @@
 /* Begin PBXFileReference section */
 		02882BFE94A0856E069E379E /* DemoDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDataLoader.swift; sourceTree = "<group>"; };
 		039C00D76529110E7167C209 /* MatchVotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchVotingView.swift; sourceTree = "<group>"; };
+		18E54A78DED5AB6FC44A78C4 /* BiometricAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthService.swift; sourceTree = "<group>"; };
 		1CCA91E86C72E55C7B71BF4F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		202FE5350FCAA22B6CC5EA9A /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
 		2263085F55CBB2B7B8CD2DDF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		22B56135A69F4C91674E1C73 /* BiometricLockOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLockOverlay.swift; sourceTree = "<group>"; };
 		2A81890D2CBAD24588A6B66B /* BarrioFantasia.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BarrioFantasia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E057C78D8BA21335930709A /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		32B9D667445EE614CFC86D9F /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
+		385A961A157496DB429A7D5B /* MatchReportPDFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchReportPDFService.swift; sourceTree = "<group>"; };
+		43EF74198B61E6767097E4BC /* VaultBackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultBackupService.swift; sourceTree = "<group>"; };
 		472325D14326C96CCB423843 /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		47C00D980CC1A34B31DC0B8F /* FantasyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyManager.swift; sourceTree = "<group>"; };
 		544932CAF7C96A5C3C75E2A8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		56702CC705629196841C658D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		6C45BD5D56AC9CD920FDA10E /* SoccerPitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerPitchView.swift; sourceTree = "<group>"; };
 		6FCBF7E8999901D6C5872FD9 /* MatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailView.swift; sourceTree = "<group>"; };
 		74379A608EEEC3B802A6F543 /* VotingReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingReminderService.swift; sourceTree = "<group>"; };
 		7480E7D1FBBD54B1D4AB6C80 /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
 		7CE8EDE3C2C4F543D3C0CAB7 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		7D056C4E22FDB7D8270B36ED /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		88BE655E237FBCC97E712EE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		890181CB77D23D854565B449 /* RatingHistoryChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingHistoryChart.swift; sourceTree = "<group>"; };
 		9A5A2365407D7C540E38599D /* StandingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsRow.swift; sourceTree = "<group>"; };
 		AF94960951D6B1A1DA53A733 /* FantasyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyView.swift; sourceTree = "<group>"; };
 		B44AD39565A214E53C678980 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
@@ -76,8 +88,11 @@
 			isa = PBXGroup;
 			children = (
 				2263085F55CBB2B7B8CD2DDF /* APIService.swift */,
+				18E54A78DED5AB6FC44A78C4 /* BiometricAuthService.swift */,
 				02882BFE94A0856E069E379E /* DemoDataLoader.swift */,
 				2E057C78D8BA21335930709A /* HapticManager.swift */,
+				385A961A157496DB429A7D5B /* MatchReportPDFService.swift */,
+				43EF74198B61E6767097E4BC /* VaultBackupService.swift */,
 				ED9194B1BA63B814C608D78D /* VotingDeadlineTip.swift */,
 				74379A608EEEC3B802A6F543 /* VotingReminderService.swift */,
 			);
@@ -129,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				7CE8EDE3C2C4F543D3C0CAB7 /* AchievementsView.swift */,
+				22B56135A69F4C91674E1C73 /* BiometricLockOverlay.swift */,
 				AF94960951D6B1A1DA53A733 /* FantasyView.swift */,
 				1CCA91E86C72E55C7B71BF4F /* MainTabView.swift */,
 				6FCBF7E8999901D6C5872FD9 /* MatchDetailView.swift */,
@@ -136,7 +152,9 @@
 				039C00D76529110E7167C209 /* MatchVotingView.swift */,
 				202FE5350FCAA22B6CC5EA9A /* PlayerDetailView.swift */,
 				C24573546275C1D8437414BD /* PlayersView.swift */,
+				890181CB77D23D854565B449 /* RatingHistoryChart.swift */,
 				544932CAF7C96A5C3C75E2A8 /* SettingsView.swift */,
+				6C45BD5D56AC9CD920FDA10E /* SoccerPitchView.swift */,
 				D86255CCE5DD9216DD269C7F /* StandingsView.swift */,
 			);
 			path = Views;
@@ -244,6 +262,8 @@
 				D5985482306AAB32C1A5431E /* Achievement.swift in Sources */,
 				92FE798EF224E6D104320554 /* AchievementsView.swift in Sources */,
 				ED053B1885A94072294E8D39 /* BarrioFantasiaApp.swift in Sources */,
+				C9E0BD105C6FC9DD58D0031F /* BiometricAuthService.swift in Sources */,
+				3F35DC0B8A86CB2DBBD2D2E9 /* BiometricLockOverlay.swift in Sources */,
 				6FBE9AB9660483EC5D9E6932 /* DemoDataLoader.swift in Sources */,
 				B52957C3265D6EA3B78D4B4C /* FantasyManager.swift in Sources */,
 				9501C635492B7A7DCF3F05F4 /* FantasyView.swift in Sources */,
@@ -252,6 +272,7 @@
 				CD4E3DC0872C2119333EB261 /* MainTabView.swift in Sources */,
 				F8A6741862A8579F5D0B1457 /* Match.swift in Sources */,
 				1AFD009B7A4477998EF678B5 /* MatchDetailView.swift in Sources */,
+				56BA484EC7E4C2ED60AF89A1 /* MatchReportPDFService.swift in Sources */,
 				A16E7B2EE7783C014C11504A /* MatchVotingView.swift in Sources */,
 				223C40840F15B6C684C53B56 /* MatchesView.swift in Sources */,
 				C6C6993CD5D580CE5CA030C0 /* MatchesViewModel.swift in Sources */,
@@ -259,10 +280,13 @@
 				B792B5B813938C8E3385C252 /* PlayerDetailView.swift in Sources */,
 				54AD4886417D2F873EA1E7E2 /* PlayersView.swift in Sources */,
 				4FC1606AD657DBD80A640913 /* PlayersViewModel.swift in Sources */,
+				149BF6FF7DBB2A48D90F188A /* RatingHistoryChart.swift in Sources */,
 				79F2352CE478CA7DE27AB834 /* SettingsView.swift in Sources */,
+				712ED974ECF1DA7DA266705B /* SoccerPitchView.swift in Sources */,
 				2746B09116EC60630B4FD650 /* StandingsRow.swift in Sources */,
 				B9E7423E50F434A6F5986C65 /* StandingsView.swift in Sources */,
 				376EF7D07C73D865BA6B951A /* StandingsViewModel.swift in Sources */,
+				3E7E88043EB1CD113F2FA9BF /* VaultBackupService.swift in Sources */,
 				8FE68F6169BC729B6AA46230 /* Vote.swift in Sources */,
 				D8739F5F335F0C1C0BEE7223 /* VotingDeadlineTip.swift in Sources */,
 				3B732E47E37A5D98F2CC059D /* VotingReminderService.swift in Sources */,

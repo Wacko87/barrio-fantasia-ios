@@ -5,6 +5,7 @@ import TipKit
 @main
 struct BarrioFantasiaApp: App {
     let container: ModelContainer
+    @State private var biometricAuth = BiometricAuthService.shared
 
     init() {
         try? Tips.configure([
@@ -29,10 +30,16 @@ struct BarrioFantasiaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainTabView()
-                .task {
-                    DemoDataLoader.loadSampleDataIfNeeded(context: container.mainContext)
+            ZStack {
+                MainTabView()
+                    .task {
+                        DemoDataLoader.loadSampleDataIfNeeded(context: container.mainContext)
+                    }
+
+                if biometricAuth.isBiometricEnabled && !biometricAuth.isUnlocked {
+                    BiometricLockOverlay(biometricAuth: biometricAuth)
                 }
+            }
         }
         .modelContainer(container)
     }

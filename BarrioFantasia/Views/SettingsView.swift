@@ -1,17 +1,44 @@
 import SwiftUI
+import SwiftData
 
 public struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
+    @Query private var players: [Player]
+    @Query private var matches: [Match]
+    @Query private var managers: [FantasyManager]
+
     @State private var serverUrlString: String = APIService.shared.serverURL.absoluteString
     @State private var isCheckingHealth: Bool = false
     @State private var healthStatusMessage: String?
     @State private var isHealthy: Bool?
+    @State private var biometricAuth = BiometricAuthService.shared
 
     public init() {}
 
     public var body: some View {
         NavigationStack {
             Form {
+                Section("Seguridad & Acceso") {
+                    Toggle("Bloquear con \(biometricAuth.biometricTypeString)", isOn: Binding(
+                        get: { biometricAuth.isBiometricEnabled },
+                        set: { biometricAuth.isBiometricEnabled = $0 }
+                    ))
+                }
+
+                Section("Copia de Seguridad de la Liga") {
+                    let json = VaultBackupService.shared.exportBackupJSON(players: players, matches: matches, managers: managers)
+                    let doc = LeagueBackupDocument(jsonString: json)
+
+                    ShareLink(item: doc, preview: SharePreview("Copia de Seguridad Barrio Fantasía", image: Image(systemName: "arrow.down.doc.fill"))) {
+                        Label("Exportar Bóveda de Liga (JSON)", systemImage: "square.and.arrow.up")
+                    }
+
+                    Text("Exporta todos los jugadores, actas de partidos y clasificación Fantasy en un archivo JSON portátil.")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                }
+
                 Section("Servidor & Sincronización") {
                     TextField("Dirección del Servidor", text: $serverUrlString)
                         .autocorrectionDisabled()

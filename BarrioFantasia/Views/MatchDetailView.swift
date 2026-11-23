@@ -5,6 +5,7 @@ public struct MatchDetailView: View {
     let match: Match
     @Query private var allPlayers: [Player]
     @State private var showingVotingSheet: Bool = false
+    @State private var selectedTeamPitch: Int = 0 // 0: Equipo A, 1: Equipo B
 
     public init(match: Match) {
         self.match = match
@@ -21,6 +22,9 @@ public struct MatchDetailView: View {
                     votingCalloutSection
                 }
 
+                // Interactive Tactical Pitch
+                tacticalPitchSection
+
                 // Teams Lineup Section
                 teamsSection
             }
@@ -29,6 +33,17 @@ public struct MatchDetailView: View {
         .background(Color(uiColor: .systemGroupedBackground))
         .navigationTitle(match.title)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                let pdfData = MatchReportPDFService.shared.generateReport(match: match, allPlayers: allPlayers)
+                let doc = MatchPDFDocument(pdfData: pdfData, title: match.title)
+                ShareLink(item: doc, preview: SharePreview(match.title, image: Image(systemName: "doc.text.fill"))) {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundStyle(Color(red: 0.89, green: 0.11, blue: 0.15))
+                }
+                .accessibilityLabel("Exportar y compartir acta oficial en PDF")
+            }
+        }
         .sheet(isPresented: $showingVotingSheet) {
             MatchVotingView(match: match, allPlayers: allPlayers)
         }
@@ -138,6 +153,37 @@ public struct MatchDetailView: View {
         }
         .padding(16)
         .background(Color(red: 0.89, green: 0.11, blue: 0.15).opacity(0.08))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+
+    private var tacticalPitchSection: some View {
+        let teamAPlayers = allPlayers.filter { match.teamAPlayerIds.contains($0.id) }
+        let teamBPlayers = allPlayers.filter { match.teamBPlayerIds.contains($0.id) }
+
+        return VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text("Pizarra Táctica 2D")
+                    .font(.headline)
+                    .fontWeight(.bold)
+
+                Spacer()
+
+                Picker("Equipo", selection: $selectedTeamPitch) {
+                    Text("Equipo A").tag(0)
+                    Text("Equipo B").tag(1)
+                }
+                .pickerStyle(.segmented)
+                .frame(width: 170)
+            }
+
+            if selectedTeamPitch == 0 {
+                SoccerPitchView(players: teamAPlayers, teamName: "Equipo A", teamColor: Color(red: 0.89, green: 0.11, blue: 0.15))
+            } else {
+                SoccerPitchView(players: teamBPlayers, teamName: "Equipo B", teamColor: Color.blue)
+            }
+        }
+        .padding()
+        .background(Color(uiColor: .secondarySystemGroupedBackground))
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 

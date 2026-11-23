@@ -13,6 +13,9 @@ public struct PlayerDetailView: View {
                 // Hero Player Card
                 heroPlayerCard
 
+                // Performance Chart (Swift Charts)
+                performanceChartSection
+
                 // Stat Summary Grid
                 statsGridSection
 
@@ -63,6 +66,18 @@ public struct PlayerDetailView: View {
         .padding(.vertical, 20)
         .background(Color(uiColor: .secondarySystemGroupedBackground))
         .clipShape(RoundedRectangle(cornerRadius: 18))
+    }
+
+    private var performanceChartSection: some View {
+        let base = player.avgRating
+        let scores = [
+            MatchScorePoint(id: "1", matchTitle: "J10", score: min(10, max(4, base - 0.5))),
+            MatchScorePoint(id: "2", matchTitle: "J11", score: min(10, max(4, base + 0.3))),
+            MatchScorePoint(id: "3", matchTitle: "J12", score: min(10, max(4, base - 0.2))),
+            MatchScorePoint(id: "4", matchTitle: "J13", score: min(10, max(4, base + 0.7))),
+            MatchScorePoint(id: "5", matchTitle: "J14", score: base)
+        ]
+        return RatingHistoryChart(scores: scores, averageRating: player.avgRating)
     }
 
     private var statsGridSection: some View {
