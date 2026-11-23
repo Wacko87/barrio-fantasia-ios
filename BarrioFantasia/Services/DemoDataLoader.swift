@@ -11,7 +11,7 @@ public final class DemoDataLoader {
         // 1. Jugadores iniciales
         let players = [
             Player(id: "p1", name: "Alex Ruiz", nickname: "El Mago", number: 10, position: .med, avatarUrl: nil, matchesPlayed: 14, goals: 9, assists: 11, mvpCount: 5, avgRating: 8.5, marketValue: 24_000_000, fantasyTeam: "Galácticos del Barrio"),
-            Player(id: "p2", name: "Oscar V.", nickname: "Wacko", number: 7, position: .del, avatarUrl: nil, matchesPlayed: 14, goals: 14, assists: 6, mvpCount: 4, avgRating: 8.2, marketValue: 22_500_000, fantasyTeam: "F.C. Pandilla"),
+            Player(id: "p2", name: "Mateo R.", nickname: "Rayo", number: 7, position: .del, avatarUrl: nil, matchesPlayed: 14, goals: 14, assists: 6, mvpCount: 4, avgRating: 8.2, marketValue: 22_500_000, fantasyTeam: "F.C. Pandilla"),
             Player(id: "p3", name: "Dani Sanz", nickname: "El Muro", number: 1, position: .por, avatarUrl: nil, matchesPlayed: 13, goals: 0, assists: 1, mvpCount: 3, avgRating: 7.9, marketValue: 18_000_000, fantasyTeam: "Muro Defensivo"),
             Player(id: "p4", name: "Carlos López", nickname: "Roca", number: 4, position: .def, avatarUrl: nil, matchesPlayed: 14, goals: 2, assists: 3, mvpCount: 1, avgRating: 7.8, marketValue: 15_000_000, fantasyTeam: "F.C. Pandilla"),
             Player(id: "p5", name: "Javi Martín", nickname: "Pulmón", number: 8, position: .med, avatarUrl: nil, matchesPlayed: 12, goals: 4, assists: 7, mvpCount: 2, avgRating: 7.5, marketValue: 16_000_000, fantasyTeam: "Tiki-Taka F.C."),
@@ -84,7 +84,7 @@ public final class DemoDataLoader {
 
         // 3. Managers Fantasy
         let managers = [
-            FantasyManager(id: "man1", teamName: "F.C. Pandilla", managerName: "Oscar", totalPoints: 482, weeklyPoints: 38, rank: 1, budget: 12_500_000, rosterPlayerIds: ["p2", "p4", "p9"], penalties: 0),
+            FantasyManager(id: "man1", teamName: "F.C. Pandilla", managerName: "Mateo", totalPoints: 482, weeklyPoints: 38, rank: 1, budget: 12_500_000, rosterPlayerIds: ["p2", "p4", "p9"], penalties: 0),
             FantasyManager(id: "man2", teamName: "Galácticos del Barrio", managerName: "Alex", totalPoints: 465, weeklyPoints: 42, rank: 2, budget: 8_000_000, rosterPlayerIds: ["p1", "p6"], penalties: 0),
             FantasyManager(id: "man3", teamName: "Muro Defensivo", managerName: "Dani", totalPoints: 438, weeklyPoints: 29, rank: 3, budget: 15_200_000, rosterPlayerIds: ["p3", "p7", "p10"], penalties: 0),
             FantasyManager(id: "man4", teamName: "Tiki-Taka F.C.", managerName: "Javi", totalPoints: 415, weeklyPoints: 31, rank: 4, budget: 19_000_000, rosterPlayerIds: ["p5", "p8"], penalties: -2)

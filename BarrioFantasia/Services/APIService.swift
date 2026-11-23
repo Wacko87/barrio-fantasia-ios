@@ -38,8 +38,8 @@ public final class APIService: Sendable {
     }
 
     public var serverURL: URL {
-        let saved = UserDefaults.standard.string(forKey: "barrio_server_url") ?? "https://barriodefantasia.wacko87.es"
-        return URL(string: saved) ?? URL(string: "https://barriodefantasia.wacko87.es")!
+        let saved = UserDefaults.standard.string(forKey: "barrio_server_url") ?? "https://api.tu-servidor.com"
+        return URL(string: saved) ?? URL(string: "https://api.tu-servidor.com")!
     }
 
     public func setServerURL(_ urlString: String) {
