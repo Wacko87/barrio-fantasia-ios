@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06368ACBB24DFC7CB4C4B4AE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263085F55CBB2B7B8CD2DDF /* APIService.swift */; };
+		1AFD009B7A4477998EF678B5 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCBF7E8999901D6C5872FD9 /* MatchDetailView.swift */; };
+		223C40840F15B6C684C53B56 /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472325D14326C96CCB423843 /* MatchesView.swift */; };
+		2746B09116EC60630B4FD650 /* StandingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5A2365407D7C540E38599D /* StandingsRow.swift */; };
+		376EF7D07C73D865BA6B951A /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACCB89353428589EA6F70F /* StandingsViewModel.swift */; };
+		3B732E47E37A5D98F2CC059D /* VotingReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74379A608EEEC3B802A6F543 /* VotingReminderService.swift */; };
+		4970FC956D38E60FE52D7F44 /* VotingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6D4BB202E16C65BDEA5EA3 /* VotingViewModel.swift */; };
+		4FC1606AD657DBD80A640913 /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58E9F47F92E64DEDC0D9EF /* PlayersViewModel.swift */; };
+		54AD4886417D2F873EA1E7E2 /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24573546275C1D8437414BD /* PlayersView.swift */; };
+		6FBE9AB9660483EC5D9E6932 /* DemoDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02882BFE94A0856E069E379E /* DemoDataLoader.swift */; };
+		79F2352CE478CA7DE27AB834 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544932CAF7C96A5C3C75E2A8 /* SettingsView.swift */; };
+		8FE68F6169BC729B6AA46230 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B9D667445EE614CFC86D9F /* Vote.swift */; };
+		92FE798EF224E6D104320554 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8EDE3C2C4F543D3C0CAB7 /* AchievementsView.swift */; };
+		949D6020FED22B3A38AB7702 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D056C4E22FDB7D8270B36ED /* Player.swift */; };
+		9501C635492B7A7DCF3F05F4 /* FantasyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94960951D6B1A1DA53A733 /* FantasyView.swift */; };
+		9E2BA227FFEA9AF90F1C3FF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BE655E237FBCC97E712EE9 /* Assets.xcassets */; };
+		A16E7B2EE7783C014C11504A /* MatchVotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039C00D76529110E7167C209 /* MatchVotingView.swift */; };
+		B52957C3265D6EA3B78D4B4C /* FantasyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C00D980CC1A34B31DC0B8F /* FantasyManager.swift */; };
+		B792B5B813938C8E3385C252 /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FE5350FCAA22B6CC5EA9A /* PlayerDetailView.swift */; };
+		B9E7423E50F434A6F5986C65 /* StandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86255CCE5DD9216DD269C7F /* StandingsView.swift */; };
+		BA1044BA6BB5924F0236196C /* FantasyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7DFA46B7F8A659BB52C1E8 /* FantasyViewModel.swift */; };
+		C6C6993CD5D580CE5CA030C0 /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480E7D1FBBD54B1D4AB6C80 /* MatchesViewModel.swift */; };
+		CD4E3DC0872C2119333EB261 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA91E86C72E55C7B71BF4F /* MainTabView.swift */; };
+		D5985482306AAB32C1A5431E /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44AD39565A214E53C678980 /* Achievement.swift */; };
+		ED053B1885A94072294E8D39 /* BarrioFantasiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DBE0450C35EF23436553C /* BarrioFantasiaApp.swift */; };
+		EF8A6F668BC7BB53DEC10B89 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E057C78D8BA21335930709A /* HapticManager.swift */; };
+		F8A6741862A8579F5D0B1457 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA89AB96A60B7CA5750DA718 /* Match.swift */; };
+		FD4F2EDAC873879C7E04E9F8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 56702CC705629196841C658D /* PrivacyInfo.xcprivacy */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02882BFE94A0856E069E379E /* DemoDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDataLoader.swift; sourceTree = "<group>"; };
+		039C00D76529110E7167C209 /* MatchVotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchVotingView.swift; sourceTree = "<group>"; };
+		1CCA91E86C72E55C7B71BF4F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		202FE5350FCAA22B6CC5EA9A /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
+		2263085F55CBB2B7B8CD2DDF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		2A81890D2CBAD24588A6B66B /* BarrioFantasia.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BarrioFantasia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E057C78D8BA21335930709A /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		32B9D667445EE614CFC86D9F /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
+		472325D14326C96CCB423843 /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
+		47C00D980CC1A34B31DC0B8F /* FantasyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyManager.swift; sourceTree = "<group>"; };
+		544932CAF7C96A5C3C75E2A8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		56702CC705629196841C658D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		6FCBF7E8999901D6C5872FD9 /* MatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailView.swift; sourceTree = "<group>"; };
+		74379A608EEEC3B802A6F543 /* VotingReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingReminderService.swift; sourceTree = "<group>"; };
+		7480E7D1FBBD54B1D4AB6C80 /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
+		7CE8EDE3C2C4F543D3C0CAB7 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		7D056C4E22FDB7D8270B36ED /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		88BE655E237FBCC97E712EE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A5A2365407D7C540E38599D /* StandingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsRow.swift; sourceTree = "<group>"; };
+		AF94960951D6B1A1DA53A733 /* FantasyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyView.swift; sourceTree = "<group>"; };
+		B44AD39565A214E53C678980 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		BC58E9F47F92E64DEDC0D9EF /* PlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
+		C0ACCB89353428589EA6F70F /* StandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewModel.swift; sourceTree = "<group>"; };
+		C24573546275C1D8437414BD /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
+		CA89AB96A60B7CA5750DA718 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		D86255CCE5DD9216DD269C7F /* StandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsView.swift; sourceTree = "<group>"; };
+		DB6D4BB202E16C65BDEA5EA3 /* VotingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingViewModel.swift; sourceTree = "<group>"; };
+		FA7DFA46B7F8A659BB52C1E8 /* FantasyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyViewModel.swift; sourceTree = "<group>"; };
+		FF7DBE0450C35EF23436553C /* BarrioFantasiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrioFantasiaApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		07AAB7EBFE8689184D4EBAFC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2263085F55CBB2B7B8CD2DDF /* APIService.swift */,
+				02882BFE94A0856E069E379E /* DemoDataLoader.swift */,
+				2E057C78D8BA21335930709A /* HapticManager.swift */,
+				74379A608EEEC3B802A6F543 /* VotingReminderService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3A63D894C7E37FE5CB14F61C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA7DFA46B7F8A659BB52C1E8 /* FantasyViewModel.swift */,
+				7480E7D1FBBD54B1D4AB6C80 /* MatchesViewModel.swift */,
+				BC58E9F47F92E64DEDC0D9EF /* PlayersViewModel.swift */,
+				C0ACCB89353428589EA6F70F /* StandingsViewModel.swift */,
+				DB6D4BB202E16C65BDEA5EA3 /* VotingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		41EC13B452FF020864A62640 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B44AD39565A214E53C678980 /* Achievement.swift */,
+				47C00D980CC1A34B31DC0B8F /* FantasyManager.swift */,
+				CA89AB96A60B7CA5750DA718 /* Match.swift */,
+				7D056C4E22FDB7D8270B36ED /* Player.swift */,
+				9A5A2365407D7C540E38599D /* StandingsRow.swift */,
+				32B9D667445EE614CFC86D9F /* Vote.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B38B09B973C29AA4FE5F025 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56702CC705629196841C658D /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5E3EA4CF58235E1323FBF928 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A81890D2CBAD24588A6B66B /* BarrioFantasia.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CD0B0C07F111B20F6B695E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CE8EDE3C2C4F543D3C0CAB7 /* AchievementsView.swift */,
+				AF94960951D6B1A1DA53A733 /* FantasyView.swift */,
+				1CCA91E86C72E55C7B71BF4F /* MainTabView.swift */,
+				6FCBF7E8999901D6C5872FD9 /* MatchDetailView.swift */,
+				472325D14326C96CCB423843 /* MatchesView.swift */,
+				039C00D76529110E7167C209 /* MatchVotingView.swift */,
+				202FE5350FCAA22B6CC5EA9A /* PlayerDetailView.swift */,
+				C24573546275C1D8437414BD /* PlayersView.swift */,
+				544932CAF7C96A5C3C75E2A8 /* SettingsView.swift */,
+				D86255CCE5DD9216DD269C7F /* StandingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		93074C4797D11016E28E95FB = {
+			isa = PBXGroup;
+			children = (
+				F1E37E28F6EA46B310C5808B /* BarrioFantasia */,
+				5E3EA4CF58235E1323FBF928 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0A40C374FCE3EAD574238C4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FF7DBE0450C35EF23436553C /* BarrioFantasiaApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F1E37E28F6EA46B310C5808B /* BarrioFantasia */ = {
+			isa = PBXGroup;
+			children = (
+				88BE655E237FBCC97E712EE9 /* Assets.xcassets */,
+				F0A40C374FCE3EAD574238C4 /* App */,
+				41EC13B452FF020864A62640 /* Models */,
+				5B38B09B973C29AA4FE5F025 /* Resources */,
+				07AAB7EBFE8689184D4EBAFC /* Services */,
+				3A63D894C7E37FE5CB14F61C /* ViewModels */,
+				6CD0B0C07F111B20F6B695E8 /* Views */,
+			);
+			path = BarrioFantasia;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DBFFBF775CF84C5A226655A3 /* BarrioFantasia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B734E1F5C7DC5836D70E3D5 /* Build configuration list for PBXNativeTarget "BarrioFantasia" */;
+			buildPhases = (
+				EE60A4CEB1E212D2DA8C3B23 /* Sources */,
+				AB74909A5083143CDF580D87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BarrioFantasia;
+			packageProductDependencies = (
+			);
+			productName = BarrioFantasia;
+			productReference = 2A81890D2CBAD24588A6B66B /* BarrioFantasia.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B9431F2DEE91C40CD274086 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 15834E0BE4091A140E4B8A20 /* Build configuration list for PBXProject "BarrioFantasia" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 93074C4797D11016E28E95FB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5E3EA4CF58235E1323FBF928 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBFFBF775CF84C5A226655A3 /* BarrioFantasia */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB74909A5083143CDF580D87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E2BA227FFEA9AF90F1C3FF5 /* Assets.xcassets in Resources */,
+				FD4F2EDAC873879C7E04E9F8 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE60A4CEB1E212D2DA8C3B23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06368ACBB24DFC7CB4C4B4AE /* APIService.swift in Sources */,
+				D5985482306AAB32C1A5431E /* Achievement.swift in Sources */,
+				92FE798EF224E6D104320554 /* AchievementsView.swift in Sources */,
+				ED053B1885A94072294E8D39 /* BarrioFantasiaApp.swift in Sources */,
+				6FBE9AB9660483EC5D9E6932 /* DemoDataLoader.swift in Sources */,
+				B52957C3265D6EA3B78D4B4C /* FantasyManager.swift in Sources */,
+				9501C635492B7A7DCF3F05F4 /* FantasyView.swift in Sources */,
+				BA1044BA6BB5924F0236196C /* FantasyViewModel.swift in Sources */,
+				EF8A6F668BC7BB53DEC10B89 /* HapticManager.swift in Sources */,
+				CD4E3DC0872C2119333EB261 /* MainTabView.swift in Sources */,
+				F8A6741862A8579F5D0B1457 /* Match.swift in Sources */,
+				1AFD009B7A4477998EF678B5 /* MatchDetailView.swift in Sources */,
+				A16E7B2EE7783C014C11504A /* MatchVotingView.swift in Sources */,
+				223C40840F15B6C684C53B56 /* MatchesView.swift in Sources */,
+				C6C6993CD5D580CE5CA030C0 /* MatchesViewModel.swift in Sources */,
+				949D6020FED22B3A38AB7702 /* Player.swift in Sources */,
+				B792B5B813938C8E3385C252 /* PlayerDetailView.swift in Sources */,
+				54AD4886417D2F873EA1E7E2 /* PlayersView.swift in Sources */,
+				4FC1606AD657DBD80A640913 /* PlayersViewModel.swift in Sources */,
+				79F2352CE478CA7DE27AB834 /* SettingsView.swift in Sources */,
+				2746B09116EC60630B4FD650 /* StandingsRow.swift in Sources */,
+				B9E7423E50F434A6F5986C65 /* StandingsView.swift in Sources */,
+				376EF7D07C73D865BA6B951A /* StandingsViewModel.swift in Sources */,
+				8FE68F6169BC729B6AA46230 /* Vote.swift in Sources */,
+				3B732E47E37A5D98F2CC059D /* VotingReminderService.swift in Sources */,
+				4970FC956D38E60FE52D7F44 /* VotingViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		242032DA864D0BA40595E57A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BarrioFantasia/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.barriofantasia.app;
+				PRODUCT_NAME = BarrioFantasia;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2B5ADD43120F7D08A12D1F19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		4A6D86EE88DEC7DBEDC3C495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BarrioFantasia/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.barriofantasia.app;
+				PRODUCT_NAME = BarrioFantasia;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67484C85165CD92B8AB641EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15834E0BE4091A140E4B8A20 /* Build configuration list for PBXProject "BarrioFantasia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67484C85165CD92B8AB641EC /* Debug */,
+				2B5ADD43120F7D08A12D1F19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3B734E1F5C7DC5836D70E3D5 /* Build configuration list for PBXNativeTarget "BarrioFantasia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A6D86EE88DEC7DBEDC3C495 /* Debug */,
+				242032DA864D0BA40595E57A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B9431F2DEE91C40CD274086 /* Project object */;
+}
