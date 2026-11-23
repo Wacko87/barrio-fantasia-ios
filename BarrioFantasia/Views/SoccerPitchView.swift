@@ -1,10 +1,40 @@
 import SwiftUI
 
+/// Vectorized pitch lines shape optimized for GPU rendering.
+public struct PitchLinesShape: Shape {
+    public init() {}
+
+    public func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let w = rect.width
+        let h = rect.height
+
+        // Boundary Lines
+        path.addRect(CGRect(x: 12, y: 12, width: w - 24, height: h - 24))
+
+        // Halfway Line
+        path.move(to: CGPoint(x: 12, y: h / 2))
+        path.addLine(to: CGPoint(x: w - 12, y: h / 2))
+
+        // Center Circle
+        path.addEllipse(in: CGRect(x: w / 2 - 35, y: h / 2 - 35, width: 70, height: 70))
+
+        // Penalty Area (Top)
+        path.addRect(CGRect(x: w / 2 - 60, y: 12, width: 120, height: 45))
+
+        // Penalty Area (Bottom)
+        path.addRect(CGRect(x: w / 2 - 60, y: h - 57, width: 120, height: 45))
+
+        return path
+    }
+}
+
 public struct SoccerPitchView: View {
     let players: [Player]
     let teamName: String
     let teamColor: Color
     @State private var selectedPlayer: Player?
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     public init(players: [Player], teamName: String, teamColor: Color = Color(red: 0.89, green: 0.11, blue: 0.15)) {
         self.players = players
@@ -19,8 +49,9 @@ public struct SoccerPitchView: View {
                 // Pitch Grass
                 pitchBackground
 
-                // Field Lines
-                pitchLines
+                // Field Lines (Vectorized GPU Path)
+                PitchLinesShape()
+                    .stroke(Color.white.opacity(0.5), lineWidth: 1.5)
 
                 // Player Formations
                 pitchPlayersOverlay
@@ -59,7 +90,7 @@ public struct SoccerPitchView: View {
                 .padding(10)
                 .background(Color(uiColor: .secondarySystemGroupedBackground))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
-                .transition(.opacity.combined(with: .scale(scale: 0.95)))
+                .transition(reduceMotion ? .opacity : .opacity.combined(with: .scale(scale: 0.95)))
             }
         }
     }
@@ -79,32 +110,6 @@ public struct SoccerPitchView: View {
                     }
                 }
             }
-        }
-    }
-
-    private var pitchLines: some View {
-        GeometryReader { geo in
-            let w = geo.size.width
-            let h = geo.size.height
-
-            Path { path in
-                // Boundary Lines
-                path.addRect(CGRect(x: 12, y: 12, width: w - 24, height: h - 24))
-
-                // Halfway Line
-                path.move(to: CGPoint(x: 12, y: h / 2))
-                path.addLine(to: CGPoint(x: w - 12, y: h / 2))
-
-                // Center Circle
-                path.addEllipse(in: CGRect(x: w / 2 - 35, y: h / 2 - 35, width: 70, height: 70))
-
-                // Penalty Area (Top)
-                path.addRect(CGRect(x: w / 2 - 60, y: 12, width: 120, height: 45))
-
-                // Penalty Area (Bottom)
-                path.addRect(CGRect(x: w / 2 - 60, y: h - 57, width: 120, height: 45))
-            }
-            .stroke(Color.white.opacity(0.5), lineWidth: 1.5)
         }
     }
 
@@ -147,8 +152,12 @@ public struct SoccerPitchView: View {
 
     private func playerPin(_ player: Player) -> some View {
         Button {
-            withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+            if reduceMotion {
                 selectedPlayer = player
+            } else {
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                    selectedPlayer = player
+                }
             }
             HapticManager.shared.impact(.light)
         } label: {

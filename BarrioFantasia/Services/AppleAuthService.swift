@@ -14,12 +14,16 @@ public final class AppleAuthService: NSObject, ASAuthorizationControllerDelegate
 
     private override init() {
         super.init()
-        let savedId = UserDefaults.standard.string(forKey: "apple_user_id")
-        if let id = savedId, !id.isEmpty {
+        // Migrate legacy UserDefaults tokens to secure Keychain
+        KeychainService.shared.migrateFromUserDefaultsIfNeeded(key: "apple_user_id")
+        KeychainService.shared.migrateFromUserDefaultsIfNeeded(key: "apple_user_name")
+        KeychainService.shared.migrateFromUserDefaultsIfNeeded(key: "apple_user_email")
+
+        if let id = KeychainService.shared.get(key: "apple_user_id"), !id.isEmpty {
             self.userIdentifier = id
             self.isAuthenticated = true
-            self.userDisplayName = UserDefaults.standard.string(forKey: "apple_user_name") ?? "Jugador"
-            self.userEmail = UserDefaults.standard.string(forKey: "apple_user_email")
+            self.userDisplayName = KeychainService.shared.get(key: "apple_user_name") ?? "Jugador"
+            self.userEmail = KeychainService.shared.get(key: "apple_user_email")
         }
     }
 
@@ -37,16 +41,16 @@ public final class AppleAuthService: NSObject, ASAuthorizationControllerDelegate
                     let combined = "\(given) \(family)".trimmingCharacters(in: .whitespacesAndNewlines)
                     if !combined.isEmpty {
                         self.userDisplayName = combined
-                        UserDefaults.standard.set(combined, forKey: "apple_user_name")
+                        KeychainService.shared.save(key: "apple_user_name", value: combined)
                     }
                 }
 
                 if let email = appleIDCredential.email {
                     self.userEmail = email
-                    UserDefaults.standard.set(email, forKey: "apple_user_email")
+                    KeychainService.shared.save(key: "apple_user_email", value: email)
                 }
 
-                UserDefaults.standard.set(userId, forKey: "apple_user_id")
+                KeychainService.shared.save(key: "apple_user_id", value: userId)
                 HapticManager.shared.notification(.success)
             }
         case .failure(let error):
@@ -56,9 +60,9 @@ public final class AppleAuthService: NSObject, ASAuthorizationControllerDelegate
     }
 
     public func signOut() {
-        UserDefaults.standard.removeObject(forKey: "apple_user_id")
-        UserDefaults.standard.removeObject(forKey: "apple_user_name")
-        UserDefaults.standard.removeObject(forKey: "apple_user_email")
+        KeychainService.shared.delete(key: "apple_user_id")
+        KeychainService.shared.delete(key: "apple_user_name")
+        KeychainService.shared.delete(key: "apple_user_email")
         self.userIdentifier = nil
         self.isAuthenticated = false
         self.userDisplayName = "Jugador"

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06368ACBB24DFC7CB4C4B4AE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263085F55CBB2B7B8CD2DDF /* APIService.swift */; };
 		149BF6FF7DBB2A48D90F188A /* RatingHistoryChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890181CB77D23D854565B449 /* RatingHistoryChart.swift */; };
+		1793A54497168F0827D62592 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26444FEC7C0A7EE741A02382 /* KeychainService.swift */; };
 		1A9B7CA9C7371E001991ACB9 /* InviteCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57C7331141A30F5424403E5 /* InviteCodeService.swift */; };
 		1AFD009B7A4477998EF678B5 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCBF7E8999901D6C5872FD9 /* MatchDetailView.swift */; };
 		223C40840F15B6C684C53B56 /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472325D14326C96CCB423843 /* MatchesView.swift */; };
@@ -61,6 +62,7 @@
 		202FE5350FCAA22B6CC5EA9A /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
 		2263085F55CBB2B7B8CD2DDF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		22B56135A69F4C91674E1C73 /* BiometricLockOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLockOverlay.swift; sourceTree = "<group>"; };
+		26444FEC7C0A7EE741A02382 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		2A81890D2CBAD24588A6B66B /* BarrioFantasia.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BarrioFantasia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E057C78D8BA21335930709A /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		32B9D667445EE614CFC86D9F /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				3D6627900CAE97B1C0440008 /* GoogleAuthService.swift */,
 				2E057C78D8BA21335930709A /* HapticManager.swift */,
 				B57C7331141A30F5424403E5 /* InviteCodeService.swift */,
+				26444FEC7C0A7EE741A02382 /* KeychainService.swift */,
 				385A961A157496DB429A7D5B /* MatchReportPDFService.swift */,
 				43EF74198B61E6767097E4BC /* VaultBackupService.swift */,
 				ED9194B1BA63B814C608D78D /* VotingDeadlineTip.swift */,
@@ -296,6 +299,7 @@
 				84FC94A51D5209720C7A0622 /* GoogleAuthService.swift in Sources */,
 				EF8A6F668BC7BB53DEC10B89 /* HapticManager.swift in Sources */,
 				1A9B7CA9C7371E001991ACB9 /* InviteCodeService.swift in Sources */,
+				1793A54497168F0827D62592 /* KeychainService.swift in Sources */,
 				B8D0EFD02CA81C61941A0C17 /* LeagueInviteSheet.swift in Sources */,
 				CD4E3DC0872C2119333EB261 /* MainTabView.swift in Sources */,
 				F8A6741862A8579F5D0B1457 /* Match.swift in Sources */,

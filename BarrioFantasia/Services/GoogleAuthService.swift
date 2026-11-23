@@ -14,11 +14,15 @@ public final class GoogleAuthService: NSObject, ASWebAuthenticationPresentationC
 
     private override init() {
         super.init()
-        let savedEmail = UserDefaults.standard.string(forKey: "google_user_email")
+        // Migrate credentials from UserDefaults if present
+        KeychainService.shared.migrateFromUserDefaultsIfNeeded(key: "google_user_email")
+        KeychainService.shared.migrateFromUserDefaultsIfNeeded(key: "google_user_name")
+
+        let savedEmail = KeychainService.shared.get(key: "google_user_email")
         if let email = savedEmail, !email.isEmpty {
             self.userEmail = email
             self.isAuthenticated = true
-            self.userDisplayName = UserDefaults.standard.string(forKey: "google_user_name") ?? email.components(separatedBy: "@").first ?? "Jugador Google"
+            self.userDisplayName = KeychainService.shared.get(key: "google_user_name") ?? email.components(separatedBy: "@").first ?? "Jugador Google"
         }
     }
 
@@ -68,15 +72,15 @@ public final class GoogleAuthService: NSObject, ASWebAuthenticationPresentationC
         self.userEmail = email
         self.userDisplayName = name
         self.isAuthenticated = true
-        UserDefaults.standard.set(email, forKey: "google_user_email")
-        UserDefaults.standard.set(name, forKey: "google_user_name")
+        KeychainService.shared.save(key: "google_user_email", value: email)
+        KeychainService.shared.save(key: "google_user_name", value: name)
         UserDefaults.standard.set(true, forKey: "has_completed_onboarding")
         HapticManager.shared.notification(.success)
     }
 
     public func signOut() {
-        UserDefaults.standard.removeObject(forKey: "google_user_email")
-        UserDefaults.standard.removeObject(forKey: "google_user_name")
+        KeychainService.shared.delete(key: "google_user_email")
+        KeychainService.shared.delete(key: "google_user_name")
         self.userEmail = nil
         self.userDisplayName = "Jugador Google"
         self.isAuthenticated = false

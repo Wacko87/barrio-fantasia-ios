@@ -16,12 +16,58 @@ public struct MatchPDFDocument: Transferable {
     }
 }
 
-public final class MatchReportPDFService: Sendable {
+public struct PlayerReportSnapshot: Sendable {
+    public let number: Int
+    public let displayName: String
+    public let position: String
+    public let avgRating: Double
+
+    public init(number: Int, displayName: String, position: String, avgRating: Double) {
+        self.number = number
+        self.displayName = displayName
+        self.position = position
+        self.avgRating = avgRating
+    }
+}
+
+public struct MatchReportSnapshot: Sendable {
+    public let title: String
+    public let date: Date
+    public let location: String
+    public let format: String
+    public let scoreTeamA: Int
+    public let scoreTeamB: Int
+    public let teamA: [PlayerReportSnapshot]
+    public let teamB: [PlayerReportSnapshot]
+
+    public init(
+        title: String,
+        date: Date,
+        location: String,
+        format: String,
+        scoreTeamA: Int,
+        scoreTeamB: Int,
+        teamA: [PlayerReportSnapshot],
+        teamB: [PlayerReportSnapshot]
+    ) {
+        self.title = title
+        self.date = date
+        self.location = location
+        self.format = format
+        self.scoreTeamA = scoreTeamA
+        self.scoreTeamB = scoreTeamB
+        self.teamA = teamA
+        self.teamB = teamB
+    }
+}
+
+/// Swift 6 actor that isolates heavy PDF rendering to a background worker.
+public actor MatchReportPDFService {
     public static let shared = MatchReportPDFService()
 
     private init() {}
 
-    public func generateReport(match: Match, allPlayers: [Player]) -> Data {
+    public func generateReport(from snapshot: MatchReportSnapshot) -> Data {
         let pageWidth: CGFloat = 595.2 // A4 standard
         let pageHeight: CGFloat = 841.8
         let bounds = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
@@ -30,9 +76,6 @@ public final class MatchReportPDFService: Sendable {
 
         return renderer.pdfData { ctx in
             ctx.beginPage()
-
-            let teamAPlayers = allPlayers.filter { match.teamAPlayerIds.contains($0.id) }
-            let teamBPlayers = allPlayers.filter { match.teamBPlayerIds.contains($0.id) }
 
             // 1. Header Background Banner
             let headerRect = CGRect(x: 0, y: 0, width: pageWidth, height: 110)
@@ -70,11 +113,11 @@ public final class MatchReportPDFService: Sendable {
                 .foregroundColor: UIColor.darkGray
             ]
 
-            match.title.draw(at: CGPoint(x: 36, y: currentY), withAttributes: metaTitleAttrs)
+            snapshot.title.draw(at: CGPoint(x: 36, y: currentY), withAttributes: metaTitleAttrs)
             currentY += 24
 
-            let dateString = match.date.formatted(date: .long, time: .shortened)
-            "Fecha: \(dateString)  |  Lugar: \(match.location)  |  Formato: \(match.format.rawValue)".draw(at: CGPoint(x: 36, y: currentY), withAttributes: metaBodyAttrs)
+            let dateString = snapshot.date.formatted(date: .long, time: .shortened)
+            "Fecha: \(dateString)  |  Lugar: \(snapshot.location)  |  Formato: \(snapshot.format)".draw(at: CGPoint(x: 36, y: currentY), withAttributes: metaBodyAttrs)
             currentY += 30
 
             // 3. Scoreboard Box
@@ -93,7 +136,7 @@ public final class MatchReportPDFService: Sendable {
             ]
 
             "EQUIPO A".draw(at: CGPoint(x: 60, y: currentY + 24), withAttributes: teamLabelAttrs)
-            "\(match.scoreTeamA)  —  \(match.scoreTeamB)".draw(at: CGPoint(x: pageWidth / 2 - 40, y: currentY + 16), withAttributes: scoreAttrs)
+            "\(snapshot.scoreTeamA)  —  \(snapshot.scoreTeamB)".draw(at: CGPoint(x: pageWidth / 2 - 40, y: currentY + 16), withAttributes: scoreAttrs)
             "EQUIPO B".draw(at: CGPoint(x: pageWidth - 140, y: currentY + 24), withAttributes: teamLabelAttrs)
 
             currentY += 95
@@ -102,10 +145,10 @@ public final class MatchReportPDFService: Sendable {
             let colWidth = (pageWidth - 92) / 2
 
             // Equipo A Column
-            drawTeamColumn(title: "EQUIPO A", players: teamAPlayers, startX: 36, startY: currentY, width: colWidth)
+            drawTeamColumn(title: "EQUIPO A", players: snapshot.teamA, startX: 36, startY: currentY, width: colWidth)
 
             // Equipo B Column
-            drawTeamColumn(title: "EQUIPO B", players: teamBPlayers, startX: 36 + colWidth + 20, startY: currentY, width: colWidth)
+            drawTeamColumn(title: "EQUIPO B", players: snapshot.teamB, startX: 36 + colWidth + 20, startY: currentY, width: colWidth)
 
             // 5. Official Verification Stamp (Footer)
             let footerY = pageHeight - 50
@@ -117,7 +160,7 @@ public final class MatchReportPDFService: Sendable {
         }
     }
 
-    private func drawTeamColumn(title: String, players: [Player], startX: CGFloat, startY: CGFloat, width: CGFloat) {
+    private func drawTeamColumn(title: String, players: [PlayerReportSnapshot], startX: CGFloat, startY: CGFloat, width: CGFloat) {
         let colTitleAttrs: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 13, weight: .bold),
             .foregroundColor: UIColor(red: 0.89, green: 0.11, blue: 0.15, alpha: 1.0)
@@ -135,7 +178,7 @@ public final class MatchReportPDFService: Sendable {
         var y = startY + 20
 
         for player in players {
-            let rowText = "#\(player.number)  \(player.displayName) (\(player.position.rawValue))"
+            let rowText = "#\(player.number)  \(player.displayName) (\(player.position))"
             rowText.draw(at: CGPoint(x: startX, y: y), withAttributes: rowAttrs)
 
             let ratingText = "Nota: \(String(format: "%.1f", player.avgRating))"

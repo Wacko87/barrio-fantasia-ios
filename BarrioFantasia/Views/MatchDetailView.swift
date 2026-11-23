@@ -6,6 +6,7 @@ public struct MatchDetailView: View {
     @Query private var allPlayers: [Player]
     @State private var showingVotingSheet: Bool = false
     @State private var selectedTeamPitch: Int = 0 // 0: Equipo A, 1: Equipo B
+    @State private var pdfDocument: MatchPDFDocument?
 
     public init(match: Match) {
         self.match = match
@@ -35,18 +36,43 @@ public struct MatchDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                let pdfData = MatchReportPDFService.shared.generateReport(match: match, allPlayers: allPlayers)
-                let doc = MatchPDFDocument(pdfData: pdfData, title: match.title)
-                ShareLink(item: doc, preview: SharePreview(match.title, image: Image(systemName: "doc.text.fill"))) {
-                    Image(systemName: "square.and.arrow.up")
-                        .foregroundStyle(Color(red: 0.89, green: 0.11, blue: 0.15))
+                if let doc = pdfDocument {
+                    ShareLink(item: doc, preview: SharePreview(match.title, image: Image(systemName: "doc.text.fill"))) {
+                        Image(systemName: "square.and.arrow.up")
+                            .foregroundStyle(Color(red: 0.89, green: 0.11, blue: 0.15))
+                    }
+                    .accessibilityLabel("Exportar y compartir acta oficial en PDF")
                 }
-                .accessibilityLabel("Exportar y compartir acta oficial en PDF")
             }
+        }
+        .task(id: match.id) {
+            await preparePDFDocument()
         }
         .sheet(isPresented: $showingVotingSheet) {
             MatchVotingView(match: match, allPlayers: allPlayers)
         }
+    }
+
+    @MainActor
+    private func preparePDFDocument() async {
+        let teamAPlayers = allPlayers.filter { match.teamAPlayerIds.contains($0.id) }
+            .map { PlayerReportSnapshot(number: $0.number, displayName: $0.displayName, position: $0.position.rawValue, avgRating: $0.avgRating) }
+        let teamBPlayers = allPlayers.filter { match.teamBPlayerIds.contains($0.id) }
+            .map { PlayerReportSnapshot(number: $0.number, displayName: $0.displayName, position: $0.position.rawValue, avgRating: $0.avgRating) }
+
+        let snapshot = MatchReportSnapshot(
+            title: match.title,
+            date: match.date,
+            location: match.location,
+            format: match.format.rawValue,
+            scoreTeamA: match.scoreTeamA,
+            scoreTeamB: match.scoreTeamB,
+            teamA: teamAPlayers,
+            teamB: teamBPlayers
+        )
+
+        let data = await MatchReportPDFService.shared.generateReport(from: snapshot)
+        self.pdfDocument = MatchPDFDocument(pdfData: data, title: match.title)
     }
 
     private var scoreboardSection: some View {
