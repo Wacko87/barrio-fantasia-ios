@@ -12,12 +12,14 @@ public enum PlayerSortOption: String, CaseIterable, Identifiable {
     public var id: String { rawValue }
 
     public var localizedTitle: String {
+        let isSpanish = (Locale.preferredLanguages.first ?? "en").hasPrefix("es")
+        let locale = Locale(identifier: isSpanish ? "es" : "en")
         switch self {
-        case .rating: return String(localized: "Nota Media")
-        case .goals: return String(localized: "Goles Anotados")
-        case .assists: return String(localized: "Asistencias")
-        case .matches: return String(localized: "Partidos Jugados")
-        case .marketValue: return String(localized: "Valor de Mercado")
+        case .rating: return String(localized: "Nota Media", locale: locale)
+        case .goals: return String(localized: "Goles Anotados", locale: locale)
+        case .assists: return String(localized: "Asistencias", locale: locale)
+        case .matches: return String(localized: "Partidos Jugados", locale: locale)
+        case .marketValue: return String(localized: "Valor de Mercado", locale: locale)
         }
     }
 }

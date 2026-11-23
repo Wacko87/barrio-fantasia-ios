@@ -14,11 +14,13 @@ public enum MatchStatus: String, CaseIterable, Codable, Sendable {
     case cerrado = "cerrado"
 
     public var title: String {
+        let isSpanish = (Locale.preferredLanguages.first ?? "en").hasPrefix("es")
+        let locale = Locale(identifier: isSpanish ? "es" : "en")
         switch self {
-        case .convocado: return String(localized: "Convocatoria Abierta")
-        case .enJuego: return String(localized: "En Juego")
-        case .jugado: return String(localized: "Votación Abierta")
-        case .cerrado: return String(localized: "Finalizado")
+        case .convocado: return String(localized: "Convocatoria Abierta", locale: locale)
+        case .enJuego: return String(localized: "En Juego", locale: locale)
+        case .jugado: return String(localized: "Votación Abierta", locale: locale)
+        case .cerrado: return String(localized: "Finalizado", locale: locale)
         }
     }
 

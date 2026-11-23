@@ -11,11 +11,13 @@ public enum MatchFilter: String, CaseIterable, Identifiable {
     public var id: String { rawValue }
 
     public var localizedTitle: String {
+        let isSpanish = (Locale.preferredLanguages.first ?? "en").hasPrefix("es")
+        let locale = Locale(identifier: isSpanish ? "es" : "en")
         switch self {
-        case .todos: return String(localized: "Todos")
-        case .convocatorias: return String(localized: "Convocatorias")
-        case .votaciones: return String(localized: "Votaciones")
-        case .finalizados: return String(localized: "Finalizados")
+        case .todos: return String(localized: "Todos", locale: locale)
+        case .convocatorias: return String(localized: "Convocatorias", locale: locale)
+        case .votaciones: return String(localized: "Votaciones", locale: locale)
+        case .finalizados: return String(localized: "Finalizados", locale: locale)
         }
     }
 }

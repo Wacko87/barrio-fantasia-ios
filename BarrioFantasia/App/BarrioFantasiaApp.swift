@@ -9,6 +9,15 @@ struct BarrioFantasiaApp: App {
     @AppStorage("has_completed_onboarding") private var hasCompletedOnboarding: Bool = false
     @State private var showingOnboarding: Bool = false
 
+    private var effectiveLocale: Locale {
+        let preferred = Locale.preferredLanguages.first ?? "en"
+        if preferred.hasPrefix("es") {
+            return Locale(identifier: "es")
+        } else {
+            return Locale(identifier: "en")
+        }
+    }
+
     init() {
         try? Tips.configure([
             .displayFrequency(.immediate),
@@ -53,6 +62,7 @@ struct BarrioFantasiaApp: App {
                     _ = InviteCodeService.shared.validateAndJoin(code: code)
                 }
             }
+            .environment(\.locale, effectiveLocale)
         }
         .modelContainer(container)
     }

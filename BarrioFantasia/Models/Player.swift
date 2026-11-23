@@ -9,11 +9,13 @@ public enum PlayerPosition: String, CaseIterable, Codable, Sendable {
     case del = "DEL"
 
     public var title: String {
+        let isSpanish = (Locale.preferredLanguages.first ?? "en").hasPrefix("es")
+        let locale = Locale(identifier: isSpanish ? "es" : "en")
         switch self {
-        case .por: return String(localized: "Portero")
-        case .def: return String(localized: "Defensa")
-        case .med: return String(localized: "Centrocampista")
-        case .del: return String(localized: "Delantero")
+        case .por: return String(localized: "Portero", locale: locale)
+        case .def: return String(localized: "Defensa", locale: locale)
+        case .med: return String(localized: "Centrocampista", locale: locale)
+        case .del: return String(localized: "Delantero", locale: locale)
         }
     }
 
