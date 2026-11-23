@@ -30,6 +30,7 @@
 		92FE798EF224E6D104320554 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8EDE3C2C4F543D3C0CAB7 /* AchievementsView.swift */; };
 		949D6020FED22B3A38AB7702 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D056C4E22FDB7D8270B36ED /* Player.swift */; };
 		9501C635492B7A7DCF3F05F4 /* FantasyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94960951D6B1A1DA53A733 /* FantasyView.swift */; };
+		9CD8CC9B696FA387CA1FAF46 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 0FE5C8076AB16591103E24FB /* Localizable.xcstrings */; };
 		9E2BA227FFEA9AF90F1C3FF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BE655E237FBCC97E712EE9 /* Assets.xcassets */; };
 		A16E7B2EE7783C014C11504A /* MatchVotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039C00D76529110E7167C209 /* MatchVotingView.swift */; };
 		B52957C3265D6EA3B78D4B4C /* FantasyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C00D980CC1A34B31DC0B8F /* FantasyManager.swift */; };
@@ -41,6 +42,7 @@
 		C9E0BD105C6FC9DD58D0031F /* BiometricAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E54A78DED5AB6FC44A78C4 /* BiometricAuthService.swift */; };
 		CD4E3DC0872C2119333EB261 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA91E86C72E55C7B71BF4F /* MainTabView.swift */; };
 		D5985482306AAB32C1A5431E /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44AD39565A214E53C678980 /* Achievement.swift */; };
+		D75BFD22607E21475136F72A /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50BD2B133BFAD703922D336E /* InfoPlist.xcstrings */; };
 		D8739F5F335F0C1C0BEE7223 /* VotingDeadlineTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9194B1BA63B814C608D78D /* VotingDeadlineTip.swift */; };
 		DD75D2B91C23DC05F41BDF96 /* AppleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A63D367DC5EB64275DA887 /* AppleAuthService.swift */; };
 		ED053B1885A94072294E8D39 /* BarrioFantasiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DBE0450C35EF23436553C /* BarrioFantasiaApp.swift */; };
@@ -53,6 +55,7 @@
 		02882BFE94A0856E069E379E /* DemoDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDataLoader.swift; sourceTree = "<group>"; };
 		039C00D76529110E7167C209 /* MatchVotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchVotingView.swift; sourceTree = "<group>"; };
 		09C9E6ED833C8C9EE1B7169C /* OnboardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowView.swift; sourceTree = "<group>"; };
+		0FE5C8076AB16591103E24FB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		18E54A78DED5AB6FC44A78C4 /* BiometricAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthService.swift; sourceTree = "<group>"; };
 		1CCA91E86C72E55C7B71BF4F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		202FE5350FCAA22B6CC5EA9A /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		43EF74198B61E6767097E4BC /* VaultBackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultBackupService.swift; sourceTree = "<group>"; };
 		472325D14326C96CCB423843 /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		47C00D980CC1A34B31DC0B8F /* FantasyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyManager.swift; sourceTree = "<group>"; };
+		50BD2B133BFAD703922D336E /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		544932CAF7C96A5C3C75E2A8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		56702CC705629196841C658D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		61A63D367DC5EB64275DA887 /* AppleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthService.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 		5B38B09B973C29AA4FE5F025 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				50BD2B133BFAD703922D336E /* InfoPlist.xcstrings */,
+				0FE5C8076AB16591103E24FB /* Localizable.xcstrings */,
 				56702CC705629196841C658D /* PrivacyInfo.xcprivacy */,
 			);
 			path = Resources;
@@ -243,6 +249,7 @@
 			knownRegions = (
 				Base,
 				en,
+				es,
 			);
 			mainGroup = 93074C4797D11016E28E95FB;
 			minimizedProjectReferenceProxies = 1;
@@ -262,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E2BA227FFEA9AF90F1C3FF5 /* Assets.xcassets in Resources */,
+				D75BFD22607E21475136F72A /* InfoPlist.xcstrings in Resources */,
+				9CD8CC9B696FA387CA1FAF46 /* Localizable.xcstrings in Resources */,
 				FD4F2EDAC873879C7E04E9F8 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

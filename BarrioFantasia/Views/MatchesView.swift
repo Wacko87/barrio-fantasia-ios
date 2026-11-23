@@ -26,7 +26,7 @@ public struct MatchesView: View {
                     // Segmented Filter
                     Picker("Filtro", selection: $viewModel.selectedFilter) {
                         ForEach(MatchFilter.allCases) { filter in
-                            Text(filter.rawValue).tag(filter)
+                            Text(filter.localizedTitle).tag(filter)
                         }
                     }
                     .pickerStyle(.segmented)

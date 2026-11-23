@@ -3,12 +3,21 @@ import SwiftUI
 import SwiftData
 
 public enum MatchFilter: String, CaseIterable, Identifiable {
-    case todos = "Todos"
-    case convocatorias = "Convocatorias"
-    case votaciones = "Votaciones"
-    case finalizados = "Finalizados"
+    case todos = "todos"
+    case convocatorias = "convocatorias"
+    case votaciones = "votaciones"
+    case finalizados = "finalizados"
 
     public var id: String { rawValue }
+
+    public var localizedTitle: String {
+        switch self {
+        case .todos: return String(localized: "Todos")
+        case .convocatorias: return String(localized: "Convocatorias")
+        case .votaciones: return String(localized: "Votaciones")
+        case .finalizados: return String(localized: "Finalizados")
+        }
+    }
 }
 
 @Observable

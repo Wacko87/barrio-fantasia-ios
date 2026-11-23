@@ -1,0 +1,54 @@
+{
+  "sourceLanguage": "es",
+  "strings": {
+    "CFBundleDisplayName": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barrio Fantasía"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barrio Fantasia"
+          }
+        }
+      }
+    },
+    "NSPhotoLibraryUsageDescription": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barrio de Fantasía permite seleccionar una imagen de tu galería para personalizar tu foto de perfil y avatar de jugador."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barrio Fantasia allows selecting an image from your photo library to customize your profile photo and player avatar."
+          }
+        }
+      }
+    },
+    "NSFaceIDUsageDescription": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barrio de Fantasía utiliza Face ID para proteger tus votaciones privadas, alineaciones y notas del partido."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barrio Fantasia uses Face ID to protect your private votes, lineups, and match ratings."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

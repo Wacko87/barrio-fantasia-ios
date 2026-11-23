@@ -22,7 +22,7 @@ public struct PlayersView: View {
 
                         Picker("Ordenar", selection: $viewModel.sortOption) {
                             ForEach(PlayerSortOption.allCases) { opt in
-                                Text(opt.rawValue).tag(opt)
+                                Text(opt.localizedTitle).tag(opt)
                             }
                         }
                         .pickerStyle(.menu)

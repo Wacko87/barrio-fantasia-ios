@@ -10,10 +10,10 @@ public enum PlayerPosition: String, CaseIterable, Codable, Sendable {
 
     public var title: String {
         switch self {
-        case .por: return "Portero"
-        case .def: return "Defensa"
-        case .med: return "Centrocampista"
-        case .del: return "Delantero"
+        case .por: return String(localized: "Portero")
+        case .def: return String(localized: "Defensa")
+        case .med: return String(localized: "Centrocampista")
+        case .del: return String(localized: "Delantero")
         }
     }
 

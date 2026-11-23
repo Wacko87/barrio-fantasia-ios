@@ -15,10 +15,10 @@ public enum MatchStatus: String, CaseIterable, Codable, Sendable {
 
     public var title: String {
         switch self {
-        case .convocado: return "Convocatoria Abierta"
-        case .enJuego: return "En Juego"
-        case .jugado: return "Votación Abierta"
-        case .cerrado: return "Finalizado"
+        case .convocado: return String(localized: "Convocatoria Abierta")
+        case .enJuego: return String(localized: "En Juego")
+        case .jugado: return String(localized: "Votación Abierta")
+        case .cerrado: return String(localized: "Finalizado")
         }
     }
 

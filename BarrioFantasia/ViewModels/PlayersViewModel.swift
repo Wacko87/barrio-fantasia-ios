@@ -3,13 +3,23 @@ import SwiftUI
 import SwiftData
 
 public enum PlayerSortOption: String, CaseIterable, Identifiable {
-    case rating = "Nota Media"
-    case goals = "Goles"
-    case assists = "Asistencias"
-    case matches = "Partidos"
-    case marketValue = "Valor Fantasy"
+    case rating = "rating"
+    case goals = "goals"
+    case assists = "assists"
+    case matches = "matches"
+    case marketValue = "marketValue"
 
     public var id: String { rawValue }
+
+    public var localizedTitle: String {
+        switch self {
+        case .rating: return String(localized: "Nota Media")
+        case .goals: return String(localized: "Goles Anotados")
+        case .assists: return String(localized: "Asistencias")
+        case .matches: return String(localized: "Partidos Jugados")
+        case .marketValue: return String(localized: "Valor de Mercado")
+        }
+    }
 }
 
 @Observable
