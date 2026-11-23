@@ -9,6 +9,7 @@ public struct SettingsView: View {
     @Query private var managers: [FantasyManager]
 
     @State private var appleAuth = AppleAuthService.shared
+    @State private var googleAuth = GoogleAuthService.shared
     @State private var serverUrlString: String = APIService.shared.serverURL.absoluteString
     @State private var isCheckingHealth: Bool = false
     @State private var healthStatusMessage: String?
@@ -22,7 +23,7 @@ public struct SettingsView: View {
     public var body: some View {
         NavigationStack {
             Form {
-                // Section 1: User Profile & Apple ID
+                // Section 1: User Profile & Auth
                 Section("Cuenta de Jugador") {
                     HStack(spacing: 12) {
                         Image(systemName: "person.crop.circle.fill")
@@ -30,15 +31,35 @@ public struct SettingsView: View {
                             .foregroundStyle(Color(red: 0.89, green: 0.11, blue: 0.15))
 
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(appleAuth.userDisplayName)
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            if let email = appleAuth.userEmail {
-                                Text(email)
-                                    .font(.caption2)
-                                    .foregroundStyle(.secondary)
+                            if googleAuth.isAuthenticated {
+                                Text(googleAuth.userDisplayName)
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                if let email = googleAuth.userEmail {
+                                    Text(email)
+                                        .font(.caption2)
+                                        .foregroundStyle(.secondary)
+                                }
+                                Text("Conectado con Google")
+                                    .font(.system(size: 10, weight: .bold))
+                                    .foregroundStyle(Color.green)
+                            } else if appleAuth.isAuthenticated {
+                                Text(appleAuth.userDisplayName)
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                if let email = appleAuth.userEmail {
+                                    Text(email)
+                                        .font(.caption2)
+                                        .foregroundStyle(.secondary)
+                                }
+                                Text("Conectado con Apple")
+                                    .font(.system(size: 10, weight: .bold))
+                                    .foregroundStyle(Color.green)
                             } else {
                                 Text("Perfil Local de Pandilla")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                Text("Sin cuenta vinculada")
                                     .font(.caption2)
                                     .foregroundStyle(.secondary)
                             }
@@ -46,11 +67,28 @@ public struct SettingsView: View {
                     }
                     .padding(.vertical, 4)
 
-                    if appleAuth.isAuthenticated {
+                    if googleAuth.isAuthenticated {
+                        Button(role: .destructive) {
+                            googleAuth.signOut()
+                        } label: {
+                            Text("Cerrar Sesión de Google")
+                        }
+                    } else if appleAuth.isAuthenticated {
                         Button(role: .destructive) {
                             appleAuth.signOut()
                         } label: {
                             Text("Cerrar Sesión de Apple")
+                        }
+                    } else {
+                        Button {
+                            Task {
+                                _ = await googleAuth.signInWithGoogle()
+                            }
+                        } label: {
+                            HStack {
+                                Image(systemName: "envelope.badge.shield.half.filled")
+                                Text("Vincular Cuenta de Google")
+                            }
                         }
                     }
                 }

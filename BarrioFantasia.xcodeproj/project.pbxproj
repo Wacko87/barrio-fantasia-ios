@@ -25,6 +25,7 @@
 		6FBE9AB9660483EC5D9E6932 /* DemoDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02882BFE94A0856E069E379E /* DemoDataLoader.swift */; };
 		712ED974ECF1DA7DA266705B /* SoccerPitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C45BD5D56AC9CD920FDA10E /* SoccerPitchView.swift */; };
 		79F2352CE478CA7DE27AB834 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544932CAF7C96A5C3C75E2A8 /* SettingsView.swift */; };
+		84FC94A51D5209720C7A0622 /* GoogleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6627900CAE97B1C0440008 /* GoogleAuthService.swift */; };
 		8FE68F6169BC729B6AA46230 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B9D667445EE614CFC86D9F /* Vote.swift */; };
 		92FE798EF224E6D104320554 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8EDE3C2C4F543D3C0CAB7 /* AchievementsView.swift */; };
 		949D6020FED22B3A38AB7702 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D056C4E22FDB7D8270B36ED /* Player.swift */; };
@@ -61,6 +62,7 @@
 		2E057C78D8BA21335930709A /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		32B9D667445EE614CFC86D9F /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		385A961A157496DB429A7D5B /* MatchReportPDFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchReportPDFService.swift; sourceTree = "<group>"; };
+		3D6627900CAE97B1C0440008 /* GoogleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthService.swift; sourceTree = "<group>"; };
 		43EF74198B61E6767097E4BC /* VaultBackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultBackupService.swift; sourceTree = "<group>"; };
 		472325D14326C96CCB423843 /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		47C00D980CC1A34B31DC0B8F /* FantasyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyManager.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				61A63D367DC5EB64275DA887 /* AppleAuthService.swift */,
 				18E54A78DED5AB6FC44A78C4 /* BiometricAuthService.swift */,
 				02882BFE94A0856E069E379E /* DemoDataLoader.swift */,
+				3D6627900CAE97B1C0440008 /* GoogleAuthService.swift */,
 				2E057C78D8BA21335930709A /* HapticManager.swift */,
 				B57C7331141A30F5424403E5 /* InviteCodeService.swift */,
 				385A961A157496DB429A7D5B /* MatchReportPDFService.swift */,
@@ -281,6 +284,7 @@
 				B52957C3265D6EA3B78D4B4C /* FantasyManager.swift in Sources */,
 				9501C635492B7A7DCF3F05F4 /* FantasyView.swift in Sources */,
 				BA1044BA6BB5924F0236196C /* FantasyViewModel.swift in Sources */,
+				84FC94A51D5209720C7A0622 /* GoogleAuthService.swift in Sources */,
 				EF8A6F668BC7BB53DEC10B89 /* HapticManager.swift in Sources */,
 				1A9B7CA9C7371E001991ACB9 /* InviteCodeService.swift in Sources */,
 				B8D0EFD02CA81C61941A0C17 /* LeagueInviteSheet.swift in Sources */,

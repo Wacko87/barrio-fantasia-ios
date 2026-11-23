@@ -4,6 +4,7 @@ import AuthenticationServices
 public struct OnboardingFlowView: View {
     @Binding var isPresented: Bool
     @State private var appleAuth = AppleAuthService.shared
+    @State private var googleAuth = GoogleAuthService.shared
     @State private var showingJoinAlert: Bool = false
     @State private var inviteCodeInput: String = ""
     @State private var joinError: String?
@@ -49,7 +50,7 @@ public struct OnboardingFlowView: View {
                 Spacer()
 
                 // Actions Container
-                VStack(spacing: 14) {
+                VStack(spacing: 12) {
                     // Sign in with Apple Button
                     SignInWithAppleButton(.continue) { request in
                         request.requestedScopes = [.fullName, .email]
@@ -60,8 +61,33 @@ public struct OnboardingFlowView: View {
                         }
                     }
                     .signInWithAppleButtonStyle(.white)
-                    .frame(height: 52)
+                    .frame(height: 50)
                     .clipShape(RoundedRectangle(cornerRadius: 14))
+
+                    // Sign in with Google Button
+                    Button {
+                        Task {
+                            let ok = await googleAuth.signInWithGoogle()
+                            if ok {
+                                completeOnboarding()
+                            }
+                        }
+                    } label: {
+                        HStack(spacing: 10) {
+                            Image(systemName: "envelope.badge.shield.half.filled")
+                                .font(.body)
+                                .foregroundStyle(Color(red: 0.89, green: 0.11, blue: 0.15))
+                            Text("Continuar con Google")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .background(Color(uiColor: .secondarySystemGroupedBackground))
+                        .foregroundStyle(Color.primary)
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                    }
+                    .buttonStyle(.plain)
 
                     // Option 1: Create New Pandilla
                     Button {
@@ -74,7 +100,7 @@ public struct OnboardingFlowView: View {
                         .font(.headline)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity)
-                        .frame(height: 52)
+                        .frame(height: 50)
                         .background(Color(red: 0.89, green: 0.11, blue: 0.15))
                         .foregroundStyle(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 14))
@@ -93,7 +119,7 @@ public struct OnboardingFlowView: View {
                         .font(.subheadline)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity)
-                        .frame(height: 48)
+                        .frame(height: 46)
                         .background(Color.white.opacity(0.12))
                         .foregroundStyle(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 14))
