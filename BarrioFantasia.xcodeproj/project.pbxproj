@@ -13,7 +13,10 @@
 		1A9B7CA9C7371E001991ACB9 /* InviteCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57C7331141A30F5424403E5 /* InviteCodeService.swift */; };
 		1AFD009B7A4477998EF678B5 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCBF7E8999901D6C5872FD9 /* MatchDetailView.swift */; };
 		223C40840F15B6C684C53B56 /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472325D14326C96CCB423843 /* MatchesView.swift */; };
+		2514E0C7338C47198C09817D /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA803D016D4FC9C5C0E063 /* KeychainServiceTests.swift */; };
+		2538828620F33F4102BF574F /* FantasyLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E6386A81263D8C2F7B362C /* FantasyLogicTests.swift */; };
 		2746B09116EC60630B4FD650 /* StandingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5A2365407D7C540E38599D /* StandingsRow.swift */; };
+		2E67A78575986D09ADC6D5EF /* VotingDeadlineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED211E4519B2F544F4A43291 /* VotingDeadlineTests.swift */; };
 		376EF7D07C73D865BA6B951A /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACCB89353428589EA6F70F /* StandingsViewModel.swift */; };
 		3B732E47E37A5D98F2CC059D /* VotingReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74379A608EEEC3B802A6F543 /* VotingReminderService.swift */; };
 		3E7E88043EB1CD113F2FA9BF /* VaultBackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF74198B61E6767097E4BC /* VaultBackupService.swift */; };
@@ -52,6 +55,16 @@
 		FD4F2EDAC873879C7E04E9F8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 56702CC705629196841C658D /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9C8A808770357BAD27FA4A1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B9431F2DEE91C40CD274086 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBFFBF775CF84C5A226655A3;
+			remoteInfo = BarrioFantasia;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		02882BFE94A0856E069E379E /* DemoDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDataLoader.swift; sourceTree = "<group>"; };
 		039C00D76529110E7167C209 /* MatchVotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchVotingView.swift; sourceTree = "<group>"; };
@@ -67,10 +80,12 @@
 		2E057C78D8BA21335930709A /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		32B9D667445EE614CFC86D9F /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		385A961A157496DB429A7D5B /* MatchReportPDFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchReportPDFService.swift; sourceTree = "<group>"; };
+		3BFA803D016D4FC9C5C0E063 /* KeychainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceTests.swift; sourceTree = "<group>"; };
 		3D6627900CAE97B1C0440008 /* GoogleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthService.swift; sourceTree = "<group>"; };
 		43EF74198B61E6767097E4BC /* VaultBackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultBackupService.swift; sourceTree = "<group>"; };
 		472325D14326C96CCB423843 /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		47C00D980CC1A34B31DC0B8F /* FantasyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyManager.swift; sourceTree = "<group>"; };
+		49E6386A81263D8C2F7B362C /* FantasyLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyLogicTests.swift; sourceTree = "<group>"; };
 		50BD2B133BFAD703922D336E /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		544932CAF7C96A5C3C75E2A8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		56702CC705629196841C658D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -84,6 +99,7 @@
 		88BE655E237FBCC97E712EE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		890181CB77D23D854565B449 /* RatingHistoryChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingHistoryChart.swift; sourceTree = "<group>"; };
 		9A5A2365407D7C540E38599D /* StandingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsRow.swift; sourceTree = "<group>"; };
+		9EC9B10447C2A09CA899EF90 /* BarrioFantasiaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BarrioFantasiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB259AE93A8A5D8D2F34C99A /* LeagueInviteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueInviteSheet.swift; sourceTree = "<group>"; };
 		AF94960951D6B1A1DA53A733 /* FantasyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyView.swift; sourceTree = "<group>"; };
 		B44AD39565A214E53C678980 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
@@ -94,6 +110,7 @@
 		CA89AB96A60B7CA5750DA718 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		D86255CCE5DD9216DD269C7F /* StandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsView.swift; sourceTree = "<group>"; };
 		DB6D4BB202E16C65BDEA5EA3 /* VotingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingViewModel.swift; sourceTree = "<group>"; };
+		ED211E4519B2F544F4A43291 /* VotingDeadlineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingDeadlineTests.swift; sourceTree = "<group>"; };
 		ED9194B1BA63B814C608D78D /* VotingDeadlineTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingDeadlineTip.swift; sourceTree = "<group>"; };
 		FA7DFA46B7F8A659BB52C1E8 /* FantasyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyViewModel.swift; sourceTree = "<group>"; };
 		FF7DBE0450C35EF23436553C /* BarrioFantasiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrioFantasiaApp.swift; sourceTree = "<group>"; };
@@ -158,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2A81890D2CBAD24588A6B66B /* BarrioFantasia.app */,
+				9EC9B10447C2A09CA899EF90 /* BarrioFantasiaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				F1E37E28F6EA46B310C5808B /* BarrioFantasia */,
+				FB22799BF5AD1AF66BEAA5B1 /* BarrioFantasiaTests */,
 				5E3EA4CF58235E1323FBF928 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -214,9 +233,38 @@
 			path = BarrioFantasia;
 			sourceTree = "<group>";
 		};
+		FB22799BF5AD1AF66BEAA5B1 /* BarrioFantasiaTests */ = {
+			isa = PBXGroup;
+			children = (
+				49E6386A81263D8C2F7B362C /* FantasyLogicTests.swift */,
+				3BFA803D016D4FC9C5C0E063 /* KeychainServiceTests.swift */,
+				ED211E4519B2F544F4A43291 /* VotingDeadlineTests.swift */,
+			);
+			name = BarrioFantasiaTests;
+			path = Tests/BarrioFantasiaTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9052980F6BCF825C5B2F684B /* BarrioFantasiaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4B112E9867FF15FF06B5A05 /* Build configuration list for PBXNativeTarget "BarrioFantasiaTests" */;
+			buildPhases = (
+				8FC7F8D44524491D15832128 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BDC7F9202CC9E78DF98F573D /* PBXTargetDependency */,
+			);
+			name = BarrioFantasiaTests;
+			packageProductDependencies = (
+			);
+			productName = BarrioFantasiaTests;
+			productReference = 9EC9B10447C2A09CA899EF90 /* BarrioFantasiaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DBFFBF775CF84C5A226655A3 /* BarrioFantasia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B734E1F5C7DC5836D70E3D5 /* Build configuration list for PBXNativeTarget "BarrioFantasia" */;
@@ -262,6 +310,7 @@
 			projectRoot = "";
 			targets = (
 				DBFFBF775CF84C5A226655A3 /* BarrioFantasia */,
+				9052980F6BCF825C5B2F684B /* BarrioFantasiaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -281,6 +330,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8FC7F8D44524491D15832128 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2538828620F33F4102BF574F /* FantasyLogicTests.swift in Sources */,
+				2514E0C7338C47198C09817D /* KeychainServiceTests.swift in Sources */,
+				2E67A78575986D09ADC6D5EF /* VotingDeadlineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE60A4CEB1E212D2DA8C3B23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,6 +387,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BDC7F9202CC9E78DF98F573D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBFFBF775CF84C5A226655A3 /* BarrioFantasia */;
+			targetProxy = 9C8A808770357BAD27FA4A1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		242032DA864D0BA40595E57A /* Release */ = {
@@ -429,6 +496,46 @@
 			};
 			name = Debug;
 		};
+		5483BE0DD2502AA74BB78486 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.barriofantasia.tests;
+				PRODUCT_NAME = BarrioFantasiaTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BarrioFantasia.app/BarrioFantasia";
+			};
+			name = Release;
+		};
+		66FC51A0DCDB37DD1FBA092B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.barriofantasia.tests;
+				PRODUCT_NAME = BarrioFantasiaTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BarrioFantasia.app/BarrioFantasia";
+			};
+			name = Debug;
+		};
 		67484C85165CD92B8AB641EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -510,6 +617,15 @@
 			buildConfigurations = (
 				4A6D86EE88DEC7DBEDC3C495 /* Debug */,
 				242032DA864D0BA40595E57A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B4B112E9867FF15FF06B5A05 /* Build configuration list for PBXNativeTarget "BarrioFantasiaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66FC51A0DCDB37DD1FBA092B /* Debug */,
+				5483BE0DD2502AA74BB78486 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

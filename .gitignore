@@ -1,7 +1,15 @@
+# macOS
 .DS_Store
+
+# Xcode
 build/
 *.xcuserstate
 xcuserdata/
 DerivedData/
 .build/
 *.ipa
+
+# Antigravity tooling & local links
+.agents/
+Apps Xcode
+Docs

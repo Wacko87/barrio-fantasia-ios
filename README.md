@@ -11,10 +11,10 @@
 <p align="center">
   <img src="https://img.shields.io/badge/iOS-17.0%2B-blue.svg?style=for-the-badge&logo=apple" alt="iOS 17.0+" />
   <img src="https://img.shields.io/badge/Swift-6.0-F05138.svg?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 6.0" />
-  <img src="https://img.shields.io/badge/SwiftUI-MVVM-0071e3.svg?style=for-the-badge&logo=swift" alt="SwiftUI MVVM" />
-  <img src="https://img.shields.io/badge/SwiftData-Offline--First-orange.svg?style=for-the-badge" alt="SwiftData" />
+  <img src="https://img.shields.io/badge/Swift_Testing-Passed-success.svg?style=for-the-badge&logo=apple" alt="Swift Testing" />
+  <a href="https://github.com/Wacko87/barrio-fantasia-ios/actions"><img src="https://img.shields.io/github/actions/workflow/status/Wacko87/barrio-fantasia-ios/ci.yml?branch=main&label=CI&style=for-the-badge&logo=githubactions&logoColor=white" alt="CI Status" /></a>
   <img src="https://img.shields.io/badge/App_Store-Ready-green.svg?style=for-the-badge&logo=appstore" alt="App Store Ready" />
-  <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge" alt="License MIT" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge" alt="License MIT" /></a>
 </p>
 
 ---
@@ -57,8 +57,31 @@
 | **Persistence** | SwiftData | Clean schema models (`Player`, `Match`, `MatchVote`, `FantasyManager`, `Achievement`). |
 | **Data Visualizations** | Swift Charts | Native `LineMark`, `PointMark`, and `RuleMark` statistical graphing. |
 | **Authentication** | Apple & Google OAuth | Native `SignInWithAppleButton` + `ASWebAuthenticationSession`. |
+| **Security & Tokens** | Apple Keychain | Encrypted keychain service (`KeychainService`) in hardware Secure Enclave. |
 | **System Frameworks** | Apple Native | `PDFKit`, `TipKit`, `LocalAuthentication`, `UserNotifications`, `CoreImage`. |
-| **Project Automation** | XcodeGen | Clean, declarative, reproducible `project.yml` Xcode project generation. |
+| **Single Source of Truth** | [XcodeGen](https://github.com/yonaskolb/XcodeGen) | `project.yml` defines targets, schemes, and build settings deterministically. |
+
+> [!NOTE]
+> **Single Source of Truth:** `project.yml` is the canonical declaration of this project. Any configuration change (build flags, targets, resources) should be modified in `project.yml`, and `xcodegen generate` runs automatically on CI to synthesize the `.xcodeproj`.
+
+---
+
+## 🧪 Automated Testing (Apple Swift Testing)
+
+The test target `BarrioFantasiaTests` utilizes Apple's modern **Swift Testing** framework (`@Suite`, `@Test`, `#expect`):
+
+```bash
+# Run unit tests on iOS Simulator
+xcodebuild test \
+  -project BarrioFantasia.xcodeproj \
+  -scheme BarrioFantasia \
+  -destination "platform=iOS Simulator,name=iPhone 18 Pro"
+```
+
+Key test suites covered:
+- **`FantasyLogicTests`**: Manager ranking by total points descending, player position parsing, nickname display logic.
+- **`VotingDeadlineTests`**: 24-hour peer rating expiration window, remaining seconds countdown, and status enforcement.
+- **`KeychainServiceTests`**: Lifecycle testing of secure token storage and fallback handling.
 
 ---
 
@@ -66,7 +89,7 @@
 
 ### Requirements
 - macOS 14.5+ (Apple Silicon recommended)
-- Xcode 16.0+ (or Xcode 27.2)
+- Xcode 16.0+
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`)
 
 ### Quick Setup
@@ -76,7 +99,7 @@
 git clone https://github.com/Wacko87/barrio-fantasia-ios.git
 cd barrio-fantasia-ios
 
-# 2. Generate the Xcode project
+# 2. Generate the Xcode project from project.yml
 xcodegen generate
 
 # 3. Open in Xcode
@@ -103,6 +126,7 @@ xcrun simctl launch booted com.barriofantasia.app -AppleLanguages '(en)' -AppleL
 
 ## 🛡️ Privacy & App Store Compliance
 
+- **Privacy Policy**: Read our comprehensive [Privacy Policy](PRIVACY_POLICY.md) compliant with App Store Guideline 5.1.1.
 - **Zero Tracking**: `NSPrivacyTracking: false` declared in `PrivacyInfo.xcprivacy`.
 - **Required-Reason APIs**: Documented `CA92.1` reason for `UserDefaults` storage.
 - **Permissions**: Clear, localized usage descriptions for `NSFaceIDUsageDescription` and `NSPhotoLibraryUsageDescription` in `InfoPlist.xcstrings`.
