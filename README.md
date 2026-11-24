@@ -32,7 +32,9 @@
   - **Squad QR Invites & Short Codes**: Quick 6-character squad join code (e.g. `BF-87X9`) and high-resolution QR code generator (`CIQRCodeGenerator`).
   - **Deep Linking**: `barriofantasia://join?code=XYZ` support for 1-click WhatsApp/iMessage invitation links.
 - **Biometric Security (Face ID / Touch ID)**: Optional `LocalAuthentication` vault protection for private votes and lineup tactical sheets.
+- **Hardware Keychain Storage & Strict ATS**: User credentials secured via Apple Keychain (`kSecClassGenericPassword` + `kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly`) and App Transport Security strictly enforced (`NSAllowsArbitraryLoads: false`).
 - **Full Vault JSON Backup (`VaultBackupService`)**: Export and backup player statistics and matchday archives via standard `Transferable` representations.
+- **Companion Backend Integration**: Built to work offline-first or in synchronization with the hardened [Barrio de Fantasía Web & API Server](https://github.com/Wacko87/barrio-fantasia).
 
 ---
 
