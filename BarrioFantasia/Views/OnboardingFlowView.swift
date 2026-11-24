@@ -28,7 +28,7 @@ public struct OnboardingFlowView: View {
 
                 // Brand Emblem
                 VStack(spacing: 12) {
-                    Image("logo", bundle: .main)
+                    Image("AppLogo")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 90, height: 90)

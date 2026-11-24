@@ -89,7 +89,7 @@ public struct MatchesView: View {
                 endPoint: .bottomTrailing
             )
             HStack(spacing: 14) {
-                Image("logo", bundle: .main)
+                Image("AppLogo")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 44, height: 44)
